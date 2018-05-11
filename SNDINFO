@@ -96,6 +96,9 @@ ambient/rmtone1	rmtone1
 ambient/machine1	machine1
 ambient/machine2	machine2
 ambient/machine3	machine3
+ambient/machine4 	machine4
+ambient/machine5	machine5
+ambient/machine6	machine6
 script/blast1	blast
 script/blast2 	blast2
 script/cry1		cry1
@@ -190,6 +193,15 @@ $ambient 21 machine3 point periodic 4.0 1.0
 
 $alias comp2	ambient/comp2
 $ambient 22 comp2 point periodic 5.0 1.0
+
+$alias machine4	ambient/machine4
+$ambient 23 machine4 point periodic 5.0 1.0
+
+$alias machine5	ambient/machine5
+$ambient 24 machine5 point periodic 5.0 1.0
+
+$alias machine6	ambient/machine6
+$ambient 24 machine6 point periodic 2.0 1.0
 
 //// WEAPON SOUNDS
 Weapons/Rifle/SFire zDMRFIRE
