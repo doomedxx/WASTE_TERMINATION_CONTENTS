@@ -1,0 +1,195 @@
+// PIEUW PIEUW
+$random world/ricochet	 {  ricochet/hit }
+$random ricochet/hit		{  world/ricochet1 world/ricochet2 world/ricochet3 world/ricochet4 world/ricochet5 world/ricochet6 world/ricochet7 world/ricochet8}
+world/ricochet1	ricoche1
+world/ricochet2	ricoche2
+world/ricochet3	ricoche3
+world/ricochet4	ricoche4
+world/ricochet5	ricoche5
+world/ricochet6	ricoche6
+world/ricochet7	ricoche2
+world/ricochet8	ricoche8
+
+$limit world/ricochet1 1
+$limit world/ricochet2 1
+$limit world/ricochet3 1
+$limit world/ricochet4 1
+$limit world/ricochet5 1
+$limit world/ricochet6 1
+$limit world/ricochet7 1
+$limit world/ricochet8 1
+$limit ricochet/hit 1
+
+$rolloff world/ricochet1 2000 700
+$rolloff world/ricochet2 2000 700
+$rolloff world/ricochet3 2000 700 
+$rolloff world/ricochet4 2000 700 
+$rolloff world/ricochet5 2000 700 
+$rolloff world/ricochet6 2000 700 
+$rolloff world/ricochet7 2000 700
+$rolloff world/ricochet8 2000 700
+
+$rolloff world/ricochet 200 700
+
+/////////////////////////TOXICITY SOUNDS///////////////////////////////
+
+Switch/Console Switch7
+Switch/locked Doorlock
+Switch/accessdenied DOORLCK
+Switch/opendoor1	opendoor1
+Switch/closedoor1	closedoor1
+Switch/cabiopen	cabiopen
+Switch/unlock unlock
+Switch/deactivate		clack_01
+Switch/activate		activate
+Switch/turnon		turnon
+
+// GRENADE THROW SOUNDS///////////////////////////////
+
+impact/glassh1	glassh1
+impact/glassh2	glassh2
+
+$random impact/glass
+{
+impact/glassh1
+impact/glassh2
+}
+
+$random grunt/grenade
+{ 
+grunt/grenade1
+grunt/grenade2
+grunt/grenade3
+}
+
+grunt/grenade1	zomgren1
+grunt/grenade2	zomgren2
+grunt/grenade3	zomgren3
+
+// SCRIPT SOUNDS /
+script/alert alert1
+script/objcomp "Sounds/script/objdone.ogg"
+
+// AMBIENT //
+ambient/vent2	vent2
+ambient/steam1	pipe1
+ambient/generator	gener
+ambient/steam2	pipe2
+ambient/steam3	pipe3
+ambient/steam4	steam
+ambient/steam	steam3
+ambient/engine	steame
+ambient/toxic	toxins
+ambient/hum1	hum
+ambient/comp1	comp1
+ambient/comp2 	comp2
+ambient/gong1	gong
+ambient/buzz1	buzz1
+ambient/airco	airco
+ambient/vent1	vent1
+ambient/sparks1	sparks
+ambient/alarm	alarm
+ambient/alarm2	alarm2
+ambient/alarm3 	alarm3
+ambient/reactor	reactor
+ambient/rmtone1	rmtone1
+ambient/machine1	machine1
+ambient/machine2	machine2
+ambient/machine3	machine3
+script/blast1	blast
+script/blast2 	blast2
+script/cry1		cry1
+script/shocker1	shocker1
+script/scare1 	scare1
+script/pump		pump
+script/nopower	nopower
+script/monster	monster
+script/toxwarn	toxwarn
+script/cabinet	Select 
+script/disable	disable
+script/heal heal
+script/glassbre GLASSBRE
+script/locked 	locked
+dest/crate1		crate1
+dest/crate2 	crate2
+dest/crate3		crate3
+dest/hcrate1		hcrate1
+dest/hcrate2		hcrate2
+dest/hcrate3		hcrate3
+dest/pipebur1		pipebur
+dest/crash1			crash1
+dest/metal1			metal
+
+
+door/door1		DSDOROPN
+
+ambient/water1 water
+
+$alias toxins			ambient/toxic
+$ambient 1 toxins point periodic 5.0 5.0
+
+$alias water1			ambient/water1
+$ambient 2 water1 point periodic 5.0 5.0
+
+$alias engine			 ambient/engine
+$ambient 3 engine point periodic 10.0 10.0
+
+$alias water3			ambient/water3
+$ambient 4 water3 point periodic 5.0 5.0
+
+$alias lighthum			ambient/hum1
+$ambient 5 lighthum point periodic 5.0 5.0
+
+$alias comp1		ambient/comp1
+$ambient 6 comp1 point periodic 5.0 5.0
+
+$alias steam		ambient/steam
+$ambient 7 steam point periodic 5.0 5.0
+
+$alias buzz1		ambient/buzz1
+$ambient 8 buzz1 point periodic 5.0 5.0
+
+$alias airco		ambient/airco
+$ambient 9 airco point periodic 5.0 5.0
+
+$alias sparks		ambient/sparks1
+$ambient 10 sparks point periodic 5.0 5.0
+
+$alias ventloop		ambient/vent1
+$ambient 11 ventloop point periodic 5.0 5.0
+
+$alias alarmloop	ambient/alarm
+$ambient 12 alarmloop point periodic 2.0 0.5
+
+$alias alarmloop2	ambient/alarm2
+$ambient 13 alarmloop2 point periodic 2.0 2.0
+
+$alias reactor		ambient/reactor
+$ambient 14 reactor point periodic 5.0 5.0
+
+$alias generator	ambient/generator
+$ambient 15 generator point periodic 1.0 1.0
+
+$alias vent2	ambient/vent2
+$ambient 16 vent2 point periodic 6.0 1.0
+
+$alias alarm3	ambient/alarm3
+$ambient 17 alarm3 point periodic 1.5 1.0
+
+$alias rmtone1	ambient/rmtone1
+$ambient 18 rmtone1 point periodic 1.3 1.0
+
+$alias machine1	ambient/machine1
+$ambient 19 machine1 point periodic 4.0 1.0
+
+$alias machine2	ambient/machine2
+$ambient 20 machine2 point periodic 1.7 1.3
+
+$alias machine3	ambient/machine3
+$ambient 21 machine3 point periodic 4.0 1.0
+
+$alias comp2	ambient/comp2
+$ambient 22 comp2 point periodic 5.0 1.0
+
+//// WEAPON SOUNDS
+Weapons/Rifle/SFire zDMRFIRE

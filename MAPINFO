@@ -1,0 +1,64 @@
+map TITLEMAP "PB_Introduction"
+{
+	music = "Titlemap"
+}
+
+ClearSkills
+
+Skill easy
+{
+   AmmoFactor = 1
+   DamageFactor = 0.75
+   MonsterHealth = 0.75
+   Aggressiveness = 1
+   SpawnFilter = Normal
+   Textcolor = Green
+   DisableCheats
+   Name = "Easy"
+   MustConfirm = "Enemy health is low. Plenty of ammo in the world. Enemy count is lowered"
+}
+
+Skill normal
+{
+   AmmoFactor = 1
+   DamageFactor = 0.90
+   MonsterHealth = 0.90
+   Aggressiveness = 1
+   SpawnFilter = Hard
+   Textcolor = Gold
+   DisableCheats
+   Name = "Medium"
+   MustConfirm = "Recommended gamemode. Enemy's are agressive, plenty of pickups, forgiving experience"
+}
+
+Skill Hard
+{
+   AmmoFactor = 1
+   DamageFactor = 1.2
+   Aggressiveness = 1
+   MonsterHealth = 1.20
+   SpawnFilter = Nightmare
+   Textcolor = Red
+   DisableCheats
+   Name = "Hard"
+   MustConfirm = "Enemy's are fast. Ammo is rare. Enemy health is high.."
+}
+
+Skill Realism
+{
+   AmmoFactor = 1
+   DamageFactor = 3.0
+   MonstertHealth = 0.3
+   Aggressiveness = 1
+   SpawnFilter = Nightmare
+   Textcolor = Purple
+   DisableCheats
+   Name = "Realistic Mode"
+   MustConfirm = "A more realistic approach! A shotgun shot from close range will instantly get you killed. Same can be said about a burst of bullets from an assault rifle. However, the same counts for you to the enemy!"
+}
+
+GameInfo
+{
+DimAmount = 0.70
+NoRandomPlayerClass = True
+}
