@@ -207,7 +207,10 @@ $alias machine5	ambient/machine5
 $ambient 24 machine5 point periodic 5.0 1.0
 
 $alias machine6	ambient/machine6
-$ambient 24 machine6 point periodic 2.0 1.0
+$ambient 25 machine6 point periodic 2.0 1.0
+
+$alias ventroom	ambient/ventroom
+$ambient 26 ventroom point periodic 1.0 1.0
 
 //// WEAPON SOUNDS
 Weapons/Rifle/SFire zDMRFIRE

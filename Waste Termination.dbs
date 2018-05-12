@@ -52,9 +52,9 @@ maps
 		}
 		defaulttoptexture = "BRICKZDA";
 		overridemiddletexture = false;
-		viewpositionx = -6828.844f;
-		viewpositiony = 2104.739f;
-		viewscale = 0.6156274f;
+		viewpositionx = -5411.842f;
+		viewpositiony = 2326.539f;
+		viewscale = 2.971515f;
 		overridefloortexture = false;
 		customceilheight = 128;
 		customfloorheight = 0;
@@ -67,7 +67,7 @@ maps
 			backscalex = 100;
 			backscaley = 100;
 			backsource = 0;
-			gridsize = 64f;
+			gridsize = 16f;
 		}
 		defaultceiltexture = "BRICKZDA";
 		overridebrightness = false;
@@ -117,12 +117,12 @@ maps
 				floorglowcolor = 0;
 				xpanningceiling = 1;
 				ypanningceiling = 1;
-				rotationceiling = 17;
+				rotationceiling = 1;
 				xscaleceiling = 1;
 				yscaleceiling = 1;
 				xpanningfloor = 1;
 				ypanningfloor = 1;
-				rotationfloor = 17;
+				rotationfloor = 1;
 				xscalefloor = 1;
 				yscalefloor = 1;
 				floorterrain = 2;
