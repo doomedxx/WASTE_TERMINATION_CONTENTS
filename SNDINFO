@@ -99,6 +99,12 @@ ambient/machine3	machine3
 ambient/machine4 	machine4
 ambient/machine5	machine5
 ambient/machine6	machine6
+ambient/ambscare1	ambscare1
+ambient/boiler		boiler
+ambient/humroom		humroom
+ambient/macroom1	macroom1
+ambient/server1		server1
+ambient/ventroom	ventroom
 script/blast1	blast
 script/blast2 	blast2
 script/cry1		cry1

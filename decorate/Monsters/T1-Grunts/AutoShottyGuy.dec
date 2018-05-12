@@ -1,3 +1,9 @@
+ACTOR BlueCardMOD: BlueCard Replaces BlueCard {
+	SpawnID 85
+	Inventory.Pickupmessage "Picked up a Cabinet Card. Use it to open storage lockers"
+
+}
+
 ACTOR ASGGuy : ShotgunGuy1 Replaces ShotgunGuy
 {
 //$Category Z2M3_Monsters

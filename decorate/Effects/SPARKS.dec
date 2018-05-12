@@ -236,7 +236,36 @@ actor Spark_Up 8901
   }
 }
 
-
+actor Spark_UpOnce_MOD
+{
+  height 8
+  radius 4
+  +NOBLOCKMAP
+  +NOGRAVITY
+  +NOSECTOR
+  +NOCLIP
+  +CLIENTSIDEONLY
+  states
+  {
+  Spawn:
+  Active:
+      TNT1 A 0
+    TNT1 A 0 A_PlaySound ("Sparks/Spawn")
+    TNT1 A 0
+    TNT1 A 1 A_SpawnItem ("SparkFlare_W1")
+    TNT1 A 0 A_CustomMissile ("Spark_W1", 0.0, 0, random (0, 360), 2, random (67, 113))
+    TNT1 A 0 A_CustomMissile ("Spark_W1", 0.0, 0, random (0, 360), 2, random (67, 113))
+    TNT1 A 0 A_CustomMissile ("Spark_W2", 0.0, 0, random (0, 360), 2, random (67, 113))
+    TNT1 A 0 A_CustomMissile ("Spark_W2", 0.0, 0, random (0, 360), 2, random (67, 113))
+    TNT1 A 0 A_CustomMissile ("Spark_W3", 0.0, 0, random (0, 360), 2, random (67, 113))
+    TNT1 A 0 A_CustomMissile ("Spark_W3", 0.0, 0, random (0, 360), 2, random (67, 113))
+    TNT1 A 0 A_CustomMissile ("Spark_W4", 0.0, 0, random (0, 360), 2, random (67, 113))
+    TNT1 A 0 A_CustomMissile ("Spark_W4", 0.0, 0, random (0, 360), 2, random (67, 113))
+    TNT1 A 0 A_CustomMissile ("Spark_W5", 0.0, 0, random (0, 360), 2, random (67, 113))
+    TNT1 A 0 A_CustomMissile ("Spark_W5", 0.0, 0, random (0, 360), 2, random (67, 113))
+    Stop
+  }
+}
 
 actor Spark_UpOnce
 {
