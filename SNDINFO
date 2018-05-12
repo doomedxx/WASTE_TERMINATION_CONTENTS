@@ -198,7 +198,7 @@ $alias machine3	ambient/machine3
 $ambient 21 machine3 point periodic 4.0 1.0
 
 $alias comp2	ambient/comp2
-$ambient 22 comp2 point periodic 5.0 1.0
+$ambient 22 comp2 point periodic 3.0 1.0
 
 $alias machine4	ambient/machine4
 $ambient 23 machine4 point periodic 5.0 1.0
