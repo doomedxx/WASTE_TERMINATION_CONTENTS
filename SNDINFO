@@ -43,6 +43,13 @@ Switch/unlock unlock
 Switch/deactivate		clack_01
 Switch/activate		activate
 Switch/turnon		turnon
+Switch/connect2		connect2
+Switch/error		error
+Switch/granted		granted
+Switch/beeper		beeper
+
+vo/safety			safety
+vo/activate			VOactivate
 
 // GRENADE THROW SOUNDS///////////////////////////////
 
@@ -82,6 +89,7 @@ ambient/engine	steame
 ambient/toxic	toxins
 ambient/hum1	hum
 ambient/comp1	comp1
+ambient/drippy	drippy
 ambient/comp2 	comp2
 ambient/gong1	gong
 ambient/buzz1	buzz1
@@ -133,6 +141,7 @@ dest/metal1			metal
 door/door1		DSDOROPN
 
 ambient/water1 water
+ambient/water2 water2
 
 $alias toxins			ambient/toxic
 $ambient 1 toxins point periodic 5.0 5.0
@@ -211,6 +220,12 @@ $ambient 25 machine6 point periodic 2.0 1.0
 
 $alias ventroom	ambient/ventroom
 $ambient 26 ventroom point periodic 1.0 1.0
+
+$alias water2 ambient/water2
+$ambient 27 water2 point periodic 5.0 1.0
+
+$alias drippy ambient/drippy
+$ambient 28 drippy point periodic 6.0 1.0
 
 //// WEAPON SOUNDS
 Weapons/Rifle/SFire zDMRFIRE
