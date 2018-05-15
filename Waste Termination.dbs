@@ -49,12 +49,21 @@ maps
 				option2 = 0;
 				notfortesting = 0;
 			}
+			
+			resource4
+			{
+				type = 2;
+				location = "D:\\Full Windows Backup\\Games\\Doom\\Doom2\\External Files\\HUDs\\UDV\\UDV_v2.12_A_BASE.pk3";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
 		}
 		defaulttoptexture = "BRICKZDA";
 		overridemiddletexture = false;
-		viewpositionx = -2352.041f;
-		viewpositiony = -1140.716f;
-		viewscale = 0.09811039f;
+		viewpositionx = -7392.054f;
+		viewpositiony = 4099.425f;
+		viewscale = 3.862933f;
 		overridefloortexture = false;
 		customceilheight = 128;
 		customfloorheight = 0;
@@ -67,7 +76,7 @@ maps
 			backscalex = 100;
 			backscaley = 100;
 			backsource = 0;
-			gridsize = 512f;
+			gridsize = 8f;
 		}
 		defaultceiltexture = "BRICKZDA";
 		overridebrightness = false;
@@ -161,8 +170,8 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
-				caretposition = 14405;
-				firstvisibleline = 429;
+				caretposition = 15961;
+				firstvisibleline = 522;
 				activetab = true;
 			}
 		}

@@ -50,7 +50,7 @@ Switch/beeper		beeper
 
 vo/safety			safety
 vo/activate			VOactivate
-
+vo/broken			broken
 // GRENADE THROW SOUNDS///////////////////////////////
 
 impact/glassh1	glassh1
@@ -91,6 +91,7 @@ ambient/hum1	hum
 ambient/comp1	comp1
 ambient/drippy	drippy
 ambient/comp2 	comp2
+ambient/flicker	flicker
 ambient/gong1	gong
 ambient/buzz1	buzz1
 ambient/airco	airco
@@ -122,6 +123,7 @@ script/pump		pump
 script/nopower	nopower
 script/monster	monster
 script/toxwarn	toxwarn
+script/hatch	hatch
 script/cabinet	Select 
 script/disable	disable
 script/heal heal
@@ -226,6 +228,9 @@ $ambient 27 water2 point periodic 5.0 1.0
 
 $alias drippy ambient/drippy
 $ambient 28 drippy point periodic 6.0 1.0
+
+$alias flicker ambient/flicker
+$ambient 29 flicker point periodic 8.0 1.0
 
 //// WEAPON SOUNDS
 Weapons/Rifle/SFire zDMRFIRE
