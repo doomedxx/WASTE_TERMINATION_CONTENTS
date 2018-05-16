@@ -124,6 +124,10 @@ script/nopower	nopower
 script/monster	monster
 script/toxwarn	toxwarn
 script/hatch	hatch
+script/drain	drain
+script/tutor	tutor
+script/obj		obj
+script/objdown		objdown
 script/cabinet	Select 
 script/disable	disable
 script/heal heal
