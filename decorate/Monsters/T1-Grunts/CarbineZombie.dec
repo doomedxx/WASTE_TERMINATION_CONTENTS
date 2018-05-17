@@ -6,9 +6,10 @@
 ACTOR ARZombieMan: Zombie_Man Replaces ZombieMan
 {
 	Game Doom
-	Health 130
+	Health 330
 	GibHealth 70
 	Speed 9
+	Mass 500
 	FastSpeed 20
 	PainChance 160
 	SpawnID 1140
@@ -323,6 +324,159 @@ ACTOR ARZombieMan: Zombie_Man Replaces ZombieMan
 		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
 		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
 		RFTR E 1 A_facetarget
+        TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		TNT1 A 0 A_PlaySound("Weapons/Rifle/SFire")
+        TNT1 AA 0 A_CustomMissile("OrangeLensFlareAlt", 34, 10, 15, 0)
+        TNT1 A 0 A_CustomMissile("SmokeSpawner", 34, 10, 15, 0)
+		RFTR F 2 BRIGHT A_CustomMissile("ZombieManTracer", 32, 0, random(-8, 8), 0, random(-3, 3))
+		TNT1 A 0 A_SpawnItem ("RifleCaseSpawn", 0, 30,0)
+		TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 0, 40,0)
+		TNT1 A 0 A_SpawnItem ("LegTarget12", 10)
+		RFTR E 1 A_facetarget
+		
         TNT1 A 0 A_SpawnItem ("HeadshotTarget10", 5, 46,0)
 		TNT1 A 0 A_SpawnItem ("LegTargetBase", 10)
 		RFTR E 2 A_facetarget

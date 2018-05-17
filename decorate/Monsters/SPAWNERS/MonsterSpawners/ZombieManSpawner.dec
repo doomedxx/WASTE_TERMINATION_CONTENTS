@@ -76,7 +76,6 @@ Actor ZombieManSpawner replaces ZombieMan
 			Goto NormalZombieManPack
 		DiceDeathWish:
 			TNT1 A 0 A_Jump(7,"RifleCommandoPack")
-			TNT1 A 0 A_Jump(13,"ScientistZombiePack")
 			TNT1 A 0 A_Jump(58,"PlasmaZombiePack")
 			TNT1 A 0 A_Jump(60,"MinigunZombiePack")
 			TNT1 A 0 A_Jump(62,"CarbineZombiePack")
@@ -131,15 +130,13 @@ Actor ZombieManPackSpawner : Demonpickup
 		TNT1 A 0 A_JumpIfInventory("IsCarbineZombie", 1, "SpawnCarbineZombie")
 		TNT1 A 0 A_JumpIfInventory("IsScientistZombie", 1, "SpawnScientistZombie")
 		TNT1 A 0 A_JumpIfInventory("IsMixedZombieManPack", 1, "SpawnMixedZombieman")
-		TNT1 A 0 A_JumpIfInventory("IsHelmetPistolZombieMan", 1, "SpawnHelmetPistolZombieMan")
-		TNT1 A 0 A_JumpIfInventory("IsPistolZombieMan", 1, "SpawnPistolZombieMan")
 		TNT1 A 0 A_JumpIfInventory("IsHelmetZombieMan", 1, "SpawnHelmetZombieMan")
 		TNT1 A 0 A_JumpIfInventory("IsNormalZombieMan", 1, "SpawnNormalZombieMan")
 		Loop
 	RandomSpawn:
-		TNT1 A 0 A_Jump(256, "SpawnRifleCommando", "SpawnPlasmaZombie", "SpawnMinigunZombie", "SpawnCarbineZombie", "SpawnScientistZombie", "SpawnHelmetPistolZombieMan", "SpawnPistolZombieMan", "SpawnHelmetZombieMan", "SpawnNormalZombieMan")
+		TNT1 A 0 A_Jump(256, "SpawnRifleCommando", "SpawnPlasmaZombie", "SpawnMinigunZombie", "SpawnCarbineZombie", "SpawnScientistZombie", "SpawnHelmetZombieMan", "SpawnNormalZombieMan")
 	SpawnMixedZombieman:
-		TNT1 A 0 A_Jump(256, "SpawnScientistZombie", "SpawnHelmetPistolZombieMan", "SpawnPistolZombieMan", "SpawnHelmetZombieMan", "SpawnNormalZombieMan")
+		TNT1 A 0 A_Jump(256, "SpawnScientistZombie", "SpawnHelmetZombieMan", "SpawnNormalZombieMan")
 		Stop
 	SpawnRifleCommando:
 		TNT1 A 1 ACS_NamedExecuteAlways("ToggleRifleCommando",0)

@@ -61,9 +61,9 @@ maps
 		}
 		defaulttoptexture = "BRICKZDA";
 		overridemiddletexture = false;
-		viewpositionx = -506.1342f;
-		viewpositiony = 138.4438f;
-		viewscale = 1.040398f;
+		viewpositionx = -2352.193f;
+		viewpositiony = 3177.24f;
+		viewscale = 0.1275436f;
 		overridefloortexture = false;
 		customceilheight = 128;
 		customfloorheight = 0;
@@ -76,7 +76,7 @@ maps
 			backscalex = 100;
 			backscaley = 100;
 			backsource = 0;
-			gridsize = 32f;
+			gridsize = 256f;
 		}
 		defaultceiltexture = "BRICKZDA";
 		overridebrightness = false;
@@ -170,8 +170,8 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
-				caretposition = 977;
-				firstvisibleline = 15;
+				caretposition = 1824;
+				firstvisibleline = 58;
 				activetab = true;
 			}
 		}

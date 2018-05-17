@@ -74,6 +74,7 @@ grunt/grenade2	zomgren2
 grunt/grenade3	zomgren3
 
 // SCRIPT SOUNDS /
+script/radio1	radio1
 script/alert alert1
 script/objcomp "Sounds/script/objdone.ogg"
 
@@ -127,7 +128,7 @@ script/hatch	hatch
 script/drain	drain
 script/tutor	tutor
 script/obj		obj
-script/objdown		objdown
+script/objdown	objdown
 script/cabinet	Select 
 script/disable	disable
 script/heal heal
