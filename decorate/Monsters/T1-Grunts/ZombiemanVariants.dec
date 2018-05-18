@@ -639,7 +639,7 @@ ACTOR PistolZombieman2: Zombie_Man Replaces ZombieMan
 	PainChance "Melee", 255
 	PainChance "MonsterKnocked", 255
 	PainChance "ExplosiveImpact", 255
-	Health 34
+	Health 150
 	Speed 6
 	Scale 1.0
 	Radius 16

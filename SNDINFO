@@ -43,7 +43,16 @@ Switch/unlock unlock
 Switch/deactivate		clack_01
 Switch/activate		activate
 Switch/turnon		turnon
+Switch/connect2		connect2
+Switch/error		error
+Switch/granted		granted
+Switch/beeper		beeper
 
+vo/safety			safety
+vo/activate			VOactivate
+vo/broken			broken
+vo/downhere			downhere
+vo/copy				copy
 // GRENADE THROW SOUNDS///////////////////////////////
 
 impact/glassh1	glassh1
@@ -67,6 +76,7 @@ grunt/grenade2	zomgren2
 grunt/grenade3	zomgren3
 
 // SCRIPT SOUNDS /
+script/radio1	radio1
 script/alert alert1
 script/objcomp "Sounds/script/objdone.ogg"
 
@@ -82,7 +92,9 @@ ambient/engine	steame
 ambient/toxic	toxins
 ambient/hum1	hum
 ambient/comp1	comp1
+ambient/drippy	drippy
 ambient/comp2 	comp2
+ambient/flicker	flicker
 ambient/gong1	gong
 ambient/buzz1	buzz1
 ambient/airco	airco
@@ -96,6 +108,15 @@ ambient/rmtone1	rmtone1
 ambient/machine1	machine1
 ambient/machine2	machine2
 ambient/machine3	machine3
+ambient/machine4 	machine4
+ambient/machine5	machine5
+ambient/machine6	machine6
+ambient/ambscare1	ambscare1
+ambient/boiler		boiler
+ambient/humroom		humroom
+ambient/macroom1	macroom1
+ambient/server1		server1
+ambient/ventroom	ventroom
 script/blast1	blast
 script/blast2 	blast2
 script/cry1		cry1
@@ -105,6 +126,11 @@ script/pump		pump
 script/nopower	nopower
 script/monster	monster
 script/toxwarn	toxwarn
+script/hatch	hatch
+script/drain	drain
+script/tutor	tutor
+script/obj		obj
+script/objdown	objdown
 script/cabinet	Select 
 script/disable	disable
 script/heal heal
@@ -124,6 +150,7 @@ dest/metal1			metal
 door/door1		DSDOROPN
 
 ambient/water1 water
+ambient/water2 water2
 
 $alias toxins			ambient/toxic
 $ambient 1 toxins point periodic 5.0 5.0
@@ -189,7 +216,28 @@ $alias machine3	ambient/machine3
 $ambient 21 machine3 point periodic 4.0 1.0
 
 $alias comp2	ambient/comp2
-$ambient 22 comp2 point periodic 5.0 1.0
+$ambient 22 comp2 point periodic 3.0 1.0
+
+$alias machine4	ambient/machine4
+$ambient 23 machine4 point periodic 5.0 1.0
+
+$alias machine5	ambient/machine5
+$ambient 24 machine5 point periodic 5.0 1.0
+
+$alias machine6	ambient/machine6
+$ambient 25 machine6 point periodic 2.0 1.0
+
+$alias ventroom	ambient/ventroom
+$ambient 26 ventroom point periodic 1.0 1.0
+
+$alias water2 ambient/water2
+$ambient 27 water2 point periodic 5.0 1.0
+
+$alias drippy ambient/drippy
+$ambient 28 drippy point periodic 6.0 1.0
+
+$alias flicker ambient/flicker
+$ambient 29 flicker point periodic 8.0 1.0
 
 //// WEAPON SOUNDS
 Weapons/Rifle/SFire zDMRFIRE

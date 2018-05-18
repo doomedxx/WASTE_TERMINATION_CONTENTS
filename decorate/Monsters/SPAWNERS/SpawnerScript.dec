@@ -1,0 +1,54 @@
+//AmmoSpawners
+#include "DECORATE/Spawners/AmmoSpawners/AmmoTokens.dec"
+#include "DECORATE/Spawners/AmmoSpawners/BulletAmmoSpawners.dec"
+#include "DECORATE/Spawners/AmmoSpawners/LauncherAmmoSpawners.dec"
+#include "DECORATE/Spawners/AmmoSpawners/ShellAmmoSpawners.dec"
+//WeaponSpawners
+#include "DECORATE/Spawners/WeaponSpawners/BFG9000WeaponSpawners.dec"
+#include "DECORATE/Spawners/WeaponSpawners/ChaingunWeaponSpawners.dec"
+#include "DECORATE/Spawners/WeaponSpawners/MeleeWeaponSpawners.dec"
+#include "DECORATE/Spawners/WeaponSpawners/PlasmaRifleWeaponSpawners.dec"
+#include "DECORATE/Spawners/WeaponSpawners/RocketLauncherWeaponSpawners.dec"
+#include "DECORATE/Spawners/WeaponSpawners/SuperShotgunWeaponSpawners.dec"
+#include "DECORATE/Spawners/WeaponSpawners/ShotgunWeaponSpawners.dec"
+//Monster Spawners
+#include "DECORATE/Spawners/MonsterSpawners/MonsterTokens.dec"
+#include "DECORATE/Spawners/MonsterSpawners/ArchvileSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/ArachnotronSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/BaronSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/CacodemonSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/ChaingunGuySpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/CyberdemonSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/LostSoulSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/HellknightSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/ImpSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/MancubusSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/NaziSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/PainElementalSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/PinkySpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/RevenantSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/ShotgunGuySpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/SpectreSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/SpiderMastermindSpawner.dec"
+#include "DECORATE/Spawners/MonsterSpawners/ZombieManSpawner.dec"
+//ItemSpawners
+#include "DECORATE/Spawners/ItemSpawners/ItemTokens.dec"
+#include "DECORATE/Spawners/ItemSpawners/ArmorSpawners.dec"
+#include "DECORATE/Spawners/ItemSpawners/BackPackSpawner.dec"
+//HealthSpawners
+#include "DECORATE/Spawners/ItemSpawners/BerserkSpawner.dec"
+#include "DECORATE/Spawners/ItemSpawners/StimkitSpawner.dec"
+#include "DECORATE/Spawners/ItemSpawners/StimkitBoxSpawner.dec"
+#include "DECORATE/Spawners/ItemSpawners/StimpackSpawner.dec"
+#include "DECORATE/Spawners/ItemSpawners/MedikitSpawner.dec"
+
+/*
+#include "DECORATE/Spawners/ItemSpawners/HealthBonusSpawner.dec"
+
+#include "DECORATE/Spawners/ItemSpawners/ArmorBonusSpawner.dec"
+
+#include "DECORATE/Spawners/ItemSpawners/BlurSphereSpawner.dec"
+#include "DECORATE/Spawners/ItemSpawners/DamageSphereSpawner.dec"
+#include "DECORATE/Spawners/ItemSpawners/SoulSphereSpawner.dec"
+#include "DECORATE/Spawners/ItemSpawners/UltraSphereSpawner.dec"
+*/

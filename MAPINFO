@@ -53,8 +53,21 @@ Skill Realism
    SpawnFilter = Nightmare
    Textcolor = Purple
    DisableCheats
-   Name = "Realistic Mode"
-   MustConfirm = "A more realistic approach! A shotgun shot from close range will instantly get you killed. Same can be said about a burst of bullets from an assault rifle. However, the same counts for you to the enemy!"
+   Name = "Realistic - Easy"
+   MustConfirm = "More realistic variables are used here. Expect a higher damage input and output along with slower paced combat. Harder version increase the damage input"
+}
+
+Skill RealismHard
+{
+   AmmoFactor = 1
+   DamageFactor = 5.0
+   MonstertHealth = 0.9
+   Aggressiveness = 1
+   SpawnFilter = Nightmare
+   Textcolor = Purple
+   DisableCheats
+   Name = "Realistic - Hard"
+   MustConfirm = "More realistic variables are used here. Expect a higher damage input and output along with slower paced combat. Harder version increase the damage input"
 }
 
 GameInfo
