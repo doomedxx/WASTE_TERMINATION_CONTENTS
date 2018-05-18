@@ -51,6 +51,8 @@ Switch/beeper		beeper
 vo/safety			safety
 vo/activate			VOactivate
 vo/broken			broken
+vo/downhere			downhere
+vo/copy				copy
 // GRENADE THROW SOUNDS///////////////////////////////
 
 impact/glassh1	glassh1
