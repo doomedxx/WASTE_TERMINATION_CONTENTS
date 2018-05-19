@@ -16,8 +16,8 @@ maps
 			
 			resource0
 			{
-				type = 0;
-				location = "D:\\Full Windows Backup\\Games\\Doom\\Doom2\\DOOM2.WAD";
+				type = 2;
+				location = "C:\\Games\\Doom2\\Project Brutality 3.0 Test 1-7-18.pk3";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
@@ -25,8 +25,8 @@ maps
 			
 			resource1
 			{
-				type = 2;
-				location = "C:\\Games\\Doom2\\Project Brutality 3.0 Test 1-7-18.pk3";
+				type = 0;
+				location = "C:\\Games\\Doom2\\DOOM2.WAD";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
@@ -44,7 +44,7 @@ maps
 			resource3
 			{
 				type = 1;
-				location = "C:\\Games\\Doom2\\Custom\\CONTENT";
+				location = "C:\\Users\\wesle\\Documents\\GitHub\\reversi222\\WASTE_TERMINATION_CONTENTS";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
@@ -52,8 +52,8 @@ maps
 			
 			resource4
 			{
-				type = 2;
-				location = "D:\\Full Windows Backup\\Games\\Doom\\Doom2\\External Files\\HUDs\\UDV\\UDV_v2.12_A_BASE.pk3";
+				type = 1;
+				location = "C:\\Users\\wesle\\Documents\\temp";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
@@ -61,8 +61,8 @@ maps
 		}
 		defaulttoptexture = "BRICKZDA";
 		overridemiddletexture = false;
-		viewpositionx = 956.6512f;
-		viewpositiony = 1833.696f;
+		viewpositionx = 950.7227f;
+		viewpositiony = 1817.101f;
 		viewscale = 1.040396f;
 		overridefloortexture = false;
 		customceilheight = 128;
