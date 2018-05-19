@@ -1,0 +1,22 @@
+/////////////////////////////////////////////
+// HXRTC HUD 7.0 (BRUTAL DOOM 20B VERSION) //
+/////////////////////////////////////////////
+
+// HUD BASIC CONFIGURATION
+
+Base Doom;
+Height 0;
+Resolution 1920, 1080;
+
+StatusBar Fullscreen, FullscreenOffsets
+
+{
+
+// DOOMGUY'S MUGSHOT
+DrawMugShot "STF", 5, 8, -79;
+
+
+DrawImage "HXHPAP", 2, -40;
+
+DrawImage "HUD0", 0, 0;
+}
