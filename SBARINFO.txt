@@ -5,18 +5,26 @@
 // HUD BASIC CONFIGURATION
 
 Base Doom;
+Resolution 640, 400;
+CompleteBorder true;
 Height 0;
-Resolution 1920, 1080;
-
 StatusBar Fullscreen, FullscreenOffsets
 
 {
-
-// DOOMGUY'S MUGSHOT
-DrawMugShot "STF", 5, 8, -79;
-
-
-DrawImage "HXHPAP", 2, -40;
-
+DrawImage "HHEALTH", -650+center, -180, center;
+DrawNumber 3, digifont_large, WHITE, Health, Alignment(right), whennotzero, -630+center, -200;
+DrawImage "HARMOR", -350+center, -190, center;
+Alpha 0.4
 DrawImage "HUD0", 0, 0;
+
+}
+
+StatusBar Normal, FullscreenOffsets
+
+{
+Alpha 0.8
+DrawImage "HHEALTH", -650+center, -110, center;
+Alpha 0.8
+DrawImage "HARMOR", -350+center, -120, center;
+
 }
