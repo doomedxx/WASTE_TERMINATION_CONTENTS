@@ -12,9 +12,9 @@ StatusBar Fullscreen, FullscreenOffsets
 
 {
 DrawImage "HHEALTH", -650+center, -180, center;
-DrawNumber 3, digifont_large, WHITE, Health, Alignment(right), whennotzero, -630+center, -200;
-DrawImage "HARMOR", -350+center, -190, center;
-Alpha 0.4
+DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -642+center, -207;
+DrawImage "HARMOR", -350+center, -180, center;
+DrawNumber 3, digifont_large1, LIGHTBLUE, Armor, Alignment(right), whennotzero, -342+center, -207;
 DrawImage "HUD0", 0, 0;
 
 }
@@ -22,9 +22,11 @@ DrawImage "HUD0", 0, 0;
 StatusBar Normal, FullscreenOffsets
 
 {
-Alpha 0.8
 DrawImage "HHEALTH", -650+center, -110, center;
-Alpha 0.8
-DrawImage "HARMOR", -350+center, -120, center;
-
+DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -642+center, -136;
+DrawImage "HARMOR", -350+center, -110, center;
+DrawNumber 3, digifont_large1, LIGHTBLUE, Armor, Alignment(right), whennotzero, -342+center, -136;
+DrawImage "HAMMO", 	642+center, -110, center;
+DrawNumber 3, digifont_large1, LIGHTBLUE, ammo2, Alignment(right), whennotzero, 662+center, -137;
+DrawNumber 3, DIGIFONT_SMALL, LIGHTBLUE, ammo1, Alignment(right), whennotzero, 612+center, -197;
 }
