@@ -1,3 +1,17 @@
+gameinfo
+{
+   menufontcolor_title = "DARKRED"
+   menufontcolor_label = "SAEHUDGR"
+   menufontcolor_value = "SAEHUDGR"
+   menufontcolor_action = "SAEHUDGR"
+   menufontcolor_header = "DARKRED"
+   menufontcolor_highlight = "SAEHUDGR"
+   menufontcolor_selection = "DARKRED"
+   statusbar = "UDVSB"
+DimColor = "Black"
+DimAmount = 0.80
+}
+
 map TITLEMAP "PB_Introduction"
 {
 	music = "Titlemap"
@@ -40,7 +54,7 @@ Skill Hard
    SpawnFilter = Nightmare
    Textcolor = Red
    DisableCheats
-   Name = "Hard"
+   Name = "Hard as fuck!"
    MustConfirm = "Enemy's are fast. Ammo is rare. Enemy health is high.."
 }
 

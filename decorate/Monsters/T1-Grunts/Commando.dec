@@ -11,7 +11,7 @@ Inventory.MaxAmount 1
 
 ACTOR ChaingunGuy1: ChaingunGuy Replaces ChaingunGuy
 {
-	Health 600
+	Health 800
 	Radius 16
 	Height 44
 	Mass 1000
