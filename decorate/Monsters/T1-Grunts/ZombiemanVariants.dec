@@ -1,4 +1,4 @@
-ACTOR PistolZombieman: Zombie_Man Replaces null
+ACTOR PistolZombieman: Zombie_Man Replaces ZombieMan
 {
 	SpawnID 1120
 	DropItem "PistolDrop"

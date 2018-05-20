@@ -45,13 +45,11 @@ Actor ZombieManSpawner replaces ZombieMan
 			TNT1 A 0 A_Jump(56,"MinigunZombiePack")
 			TNT1 A 0 A_Jump(56,"CarbineZombiePack")
 			TNT1 A 0 A_Jump(20,"MixedZombieManPack")
-			TNT1 A 0 A_Jump(26,"HelmetPistolZombieManPack")
 			TNT1 A 0 A_Jump(26,"PistolZombieManPack")
 			TNT1 A 0 A_Jump(26,"HelmetZombieManPack")
 			Goto NormalZombieManPack
 	DiceProg:	// Progressive spawn preset enforces strict spawning rules by excluding monsters until they are presented in later levels.
 		DiceTier1:
-			TNT1 A 0 A_Jump(16,"HelmetPistolZombieManPack")
 			TNT1 A 0 A_Jump(28,"PistolZombieManPack")
 			TNT1 A 0 A_Jump(16,"HelmetZombieManPack")
 			Goto NormalZombieManPack
@@ -97,9 +95,6 @@ Actor ZombieManSpawner replaces ZombieMan
 		Stop
 	ScientistZombiePack:
 		TNT1 A 0 A_RadiusGive("IsScientistZombie", 290, RGF_GIVESELF | RGF_MONSTERS | RGF_ITEMS | RGF_NOSIGHT, 1)
-		Stop
-	HelmetPistolZombieManPack:
-		TNT1 A 0 A_RadiusGive("IsHelmetPistolZombieMan", 290, RGF_GIVESELF | RGF_MONSTERS | RGF_ITEMS | RGF_NOSIGHT, 1)
 		Stop
 	PistolZombieManPack:
 		TNT1 A 0 A_RadiusGive("IsPistolZombieMan", 290, RGF_GIVESELF | RGF_MONSTERS | RGF_ITEMS | RGF_NOSIGHT, 1)
@@ -157,10 +152,6 @@ Actor ZombieManPackSpawner : Demonpickup
 	SpawnScientistZombie:
 		TNT1 A 1 ACS_NamedExecuteAlways("ToggleScientistZombie",0)
 		TNT1 A 0 A_SpawnItemEx("LabGuy",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
-		Stop
-	SpawnHelmetPistolZombieMan:
-		TNT1 A 1 ACS_NamedExecuteAlways("ToggleHelmetZombie",0)
-		TNT1 A 0 A_SpawnItemEx("PistolZombieMan2",0,0,0,0,0,0,0,SXF_TRANSFERSPECIAL | SXF_TRANSFERAMBUSHFLAG | SXF_TRANSFERPOINTERS | 288)
 		Stop
 	SpawnPistolZombieMan:
 		TNT1 A 1 ACS_NamedExecuteAlways("TogglePistolZombie",0)
