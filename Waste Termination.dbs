@@ -66,9 +66,9 @@ maps
 		overridebrightness = false;
 		uselongtexturenames = false;
 		useresourcesinreadonlymode = false;
-		viewpositionx = 1708.801f;
-		viewpositiony = 487.7344f;
-		viewscale = 2.587423f;
+		viewpositionx = 3151.015f;
+		viewpositiony = 2054.079f;
+		viewscale = 0.1876864f;
 		
 		grid
 		{
@@ -78,7 +78,7 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 16f;
+			gridsize = 256f;
 		}
 		
 		fieldtypes
@@ -117,12 +117,12 @@ maps
 				floorglowcolor = 0;
 				xpanningceiling = 1;
 				ypanningceiling = 1;
-				rotationceiling = 1;
+				rotationceiling = 17;
 				xscaleceiling = 1;
 				yscaleceiling = 1;
 				xpanningfloor = 1;
 				ypanningfloor = 1;
-				rotationfloor = 1;
+				rotationfloor = 17;
 				xscalefloor = 1;
 				yscalefloor = 1;
 				floorterrain = 2;
