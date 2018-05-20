@@ -219,7 +219,7 @@ $alias comp2	ambient/comp2
 $ambient 22 comp2 point periodic 3.0 1.0
 
 $alias machine4	ambient/machine4
-$ambient 23 machine4 point periodic 5.0 1.0
+$ambient 23 machine4 point periodic 3.0 1.0
 
 $alias machine5	ambient/machine5
 $ambient 24 machine5 point periodic 5.0 1.0
@@ -238,6 +238,9 @@ $ambient 28 drippy point periodic 6.0 1.0
 
 $alias flicker ambient/flicker
 $ambient 29 flicker point periodic 8.0 1.0
+
+$alias macroom ambient/macroom1
+$ambient 30 macroom point periodic 5.0 1.0
 
 //// WEAPON SOUNDS
 Weapons/Rifle/SFire zDMRFIRE
