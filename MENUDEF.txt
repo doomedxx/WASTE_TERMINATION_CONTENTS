@@ -719,12 +719,11 @@ ListMenu "MainMenu"
 	}
 	IfGame(Doom, Strife, Chex)
 	{
-		TextItem "New Game", "n", "PlayerclassMenu"
+		TextItem "Start Campaign", "n", "PlayerclassMenu"
 		Selector "M_SKULL1", -30, -8
 		ifOption(SwapMenu)
 		{
-			TextItem "Load Game", "l", "LoadGameMenu"
-			TextItem "Save Game", "s", "SaveGameMenu"
+			TextItem "Continue", "l", "LoadGameMenu"
 			TextItem "Options", "o", "OptionsMenu"
 			TextItem "BD Options", "b", "BDSettings"
 		}
@@ -732,8 +731,7 @@ ListMenu "MainMenu"
 		{
 			TextItem "Options", "o", "OptionsMenu"
 			TextItem "Project Brutality", "b", "BDSettings"
-			TextItem "Load Game", "l", "LoadGameMenu"
-			TextItem "Save Game", "s", "SaveGameMenu"
+			TextItem "Continue", "l", "LoadGameMenu"
 		}
 		ifOption(ReadThis)
 		{

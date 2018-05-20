@@ -1,0 +1,134 @@
+type = "Doom Builder Map Settings Configuration";
+gameconfig = "GZDoom_DoomUDMF.cfg";
+strictpatches = 0;
+
+maps
+{
+	
+	TITLEMAP
+	{
+		scriptcompiler = "zdoom_acs.cfg";
+		defaultfloortexture = "CRATOP2";
+		overrideceilheight = false;
+		
+		resources
+		{
+			
+			resource0
+			{
+				type = 0;
+				location = "C:\\Games\\Doom2\\wads\\cc4-tex.wad";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+			
+			resource1
+			{
+				type = 0;
+				location = "C:\\Games\\Doom2\\DOOM2.WAD";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+			
+			resource2
+			{
+				type = 2;
+				location = "C:\\Games\\Doom2\\Project Brutality 3.0 Test 1-7-18.pk3";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+		}
+		defaulttoptexture = "BRICKZDA";
+		overridemiddletexture = false;
+		
+		fieldtypes
+		{
+			
+			sector
+			{
+				lightcolor = 0;
+				fogdensity = 0;
+				yscaleceiling = 1;
+				xscalefloor = 1;
+				rotationceiling = 17;
+				xpanningfloor = 1;
+				lightceiling = 0;
+				damagetype = 2;
+				xscaleceiling = 1;
+				ypanningceiling = 1;
+				yscalefloor = 1;
+				ceilingterrain = 2;
+				floorglowheight = 1;
+				floorterrain = 2;
+				floor_reflect = 1;
+				xpanningceiling = 1;
+				fadecolor = 0;
+				alphaceiling = 1;
+				rotationfloor = 17;
+				lightfloor = 0;
+				desaturation = 1;
+				floorglowcolor = 0;
+				ypanningfloor = 1;
+			}
+			
+			linedef
+			{
+				renderstyle = 2;
+				alpha = 1;
+				arg0str = 2;
+			}
+			
+			sidedef
+			{
+				scalex_top = 1;
+				scaley_top = 1;
+				offsetx_bottom = 1;
+				offsetx_top = 1;
+				scalex_bottom = 1;
+				offsety_mid = 1;
+				scaley_bottom = 1;
+				offsety_top = 1;
+				offsety_bottom = 1;
+				offsetx_mid = 1;
+				scalex_mid = 1;
+				scaley_mid = 1;
+			}
+			
+			thing
+			{
+				arg0str = 2;
+			}
+		}
+		viewpositionx = -2368.729f;
+		viewpositiony = 1492.418f;
+		viewscale = 0.2586453f;
+		overridefloortexture = false;
+		customceilheight = 128;
+		customfloorheight = 0;
+		
+		grid
+		{
+			background = "";
+			backoffsetx = 0;
+			backoffsety = 0;
+			backscalex = 100;
+			backscaley = 100;
+			backsource = 0;
+			gridsize = 128f;
+		}
+		defaultceiltexture = "BROWN145";
+		overridebrightness = false;
+		uselongtexturenames = false;
+		useresourcesinreadonlymode = false;
+		overridebottomtexture = false;
+		overridefloorheight = false;
+		overridetoptexture = false;
+		custombrightness = 196;
+		overrideceiltexture = false;
+		defaultwalltexture = "BRICKZDA";
+		defaultbottomtexture = "BRICKZDA";
+	}
+}

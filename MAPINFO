@@ -1,13 +1,5 @@
 gameinfo
 {
-   menufontcolor_title = "DARKRED"
-   menufontcolor_label = "SAEHUDGR"
-   menufontcolor_value = "SAEHUDGR"
-   menufontcolor_action = "SAEHUDGR"
-   menufontcolor_header = "DARKRED"
-   menufontcolor_highlight = "SAEHUDGR"
-   menufontcolor_selection = "DARKRED"
-   statusbar = "UDVSB"
 DimColor = "Black"
 DimAmount = 0.80
 }
@@ -48,9 +40,9 @@ Skill normal
 Skill Hard
 {
    AmmoFactor = 1
-   DamageFactor = 1.2
+   DamageFactor = 1.7
    Aggressiveness = 1
-   MonsterHealth = 1.20
+   MonsterHealth = 1.8
    SpawnFilter = Nightmare
    Textcolor = Red
    DisableCheats
@@ -75,12 +67,12 @@ Skill RealismHard
 {
    AmmoFactor = 1
    DamageFactor = 5.0
-   MonstertHealth = 0.9
+   MonstertHealth = 1.4
    Aggressiveness = 1
    SpawnFilter = Nightmare
    Textcolor = Purple
    DisableCheats
-   Name = "Realistic - Hard"
+   Name = "Realistic - Extreme"
    MustConfirm = "More realistic variables are used here. Expect a higher damage input and output along with slower paced combat. Harder version increase the damage input"
 }
 

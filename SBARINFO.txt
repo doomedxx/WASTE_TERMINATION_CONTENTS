@@ -22,11 +22,21 @@ DrawImage "HUD0", 0, 0;
 StatusBar Normal, FullscreenOffsets
 
 {
+
+// HEALTH
 DrawImage "HHEALTH", -650+center, -110, center;
 DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -642+center, -136;
+
+// ARMOR
 DrawImage "HARMOR", -350+center, -110, center;
-DrawNumber 3, digifont_large1, LIGHTBLUE, Armor, Alignment(right), whennotzero, -342+center, -136;
+DrawNumber 3, digifont_large1, LIGHTBLUE, Armor, Alignment(right), -342+center, -136;
+ 
+// GRENADE
+DrawImage "HNADE", 	692+center, -205, center;
+DrawNumber 3, digifont_large1, LIGHTBLUE, HandGrenadeAmmo, Alignment(right), whennotzero, 672+center, -230;
+
+// AMMO
 DrawImage "HAMMO", 	642+center, -110, center;
-DrawNumber 3, digifont_large1, LIGHTBLUE, ammo2, Alignment(right), whennotzero, 662+center, -137;
-DrawNumber 3, DIGIFONT_SMALL, LIGHTBLUE, ammo1, Alignment(right), whennotzero, 612+center, -197;
+DrawNumber 3, digifont_large1, LIGHTBLUE, ammo2, Alignment(right), 662+center, -137;
+DrawNumber 3, DIGIFONT_SMALL, LIGHTBLUE, ammo1, Alignment(right), 572+center, -140;
 }

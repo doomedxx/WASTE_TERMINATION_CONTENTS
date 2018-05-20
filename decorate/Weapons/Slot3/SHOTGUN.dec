@@ -467,7 +467,7 @@ ACTOR Shot_Gun : Shotgun Replaces Shotgun
 		TNT1 AA 0 A_FireCustomMissile("GunFireSmoke", 0, 0, 0, 0, 0, 0)
         SHTF AB 1 BRIGHT
 		TNT1 A 0 A_ZoomFactor(0.95)
-		SHTG A 0 A_FireBullets(3.65, 1.85, 9, 8, "ShotgunPuff")////////////////////////////////////// Project Brutality Pump Shotgun
+		SHTG A 0 A_FireBullets(3.95, 2.85, 9, 8, "ShotgunPuff")////////////////////////////////////// Project Brutality Pump Shotgun
 		TNT1 A 0 ACS_NamedExecute("Recoil282", 0, 0, 0, 0)
 		SHTF CDE 1
 		TNT1 A 0 A_ZoomFactor(0.975)
@@ -686,7 +686,7 @@ ACTOR Shot_Gun : Shotgun Replaces Shotgun
         TNT1 A 0
 		
 		TNT1 A 0 A_FireCustomMissile("YellowFlareSpawn", 0, 0, 0, 0)
-		TNT1 A 0 A_FireBullets(3.25, 1.35, 10, 12, "ShotgunPuff")
+		TNT1 A 0 A_FireBullets(3.75, 2.35, 10, 12, "ShotgunPuff")
 		TNT1 A 0 //ACS_NamedExecute("Recoil282", 0, 0, 0, 0)
 		TNT1 A 0 A_TakeInventory("ShotgunAmmo", 1)
 		TNT1 AAAAA 0 A_FireCustomMissile("Tracer", Random(-5, 5), 0, -1, Random(-5, 5))
