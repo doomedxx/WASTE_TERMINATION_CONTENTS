@@ -716,7 +716,7 @@ ListMenu "MainMenu"
 	{
 		Selector "", 0, 0
 		Font "SMALLFONT", WHITE
-		StaticPatch -75, -95, "TEMPLOGO"
+		StaticPatch -85, -115, "TEMPLOGO"
 		Position -40, 165
 	}
 	IfGame(Doom, Strife, Chex)
@@ -745,8 +745,8 @@ ListMenu "MainMenu"
 ListMenu "SkillMenu"
 {
 		Font "SMALLFONT", WHITE
-		StaticPatch -75, -95, "TEMPLOGO"
-		Position -40, 165
+		StaticPatch -75, -125, "TEMPLOGO"
+		Position -40, 185
 }
 
 OptionValue "DisabledOption"
