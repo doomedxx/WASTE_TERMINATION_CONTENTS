@@ -38,8 +38,8 @@ ACTOR ShotgunGuy1: ShotgunGuy Replaces ShotgunGuy
 	damagefactor "SSG", 50.0
 	damagefactor "killme", 0.0
 	DropItem "DropedGrenade" 7
-	DropItem "Shell"
-	DropItem "stimpack" 70
+	DropItem "Shell" 30
+	DropItem "stimpack" 15
 	DropItem "armorbonus"
 	damagetype "Melee"
 	Monster
@@ -2095,7 +2095,7 @@ States{Spawn:
 Actor Vanilla_Shotgunguy1 : Shotgunguy1
 {
 	DropItem "DropedGrenade" 6
-	DropItem "Shell"
+	DropItem "Shell" 30
 	DropItem "stimpack" 50
 	DropItem "armorbonus"
 	States

@@ -83,10 +83,10 @@ ACTOR Zombie_Man: ZombieMan Replaces ZombieMan
 	damagefactor "Shrapnel", 0.4
 	damagefactor "ExplosiveImpact", 0.6
 	damagefactor "killme", 0.0
-	DropItem "DropedRifle"
-	DropItem "stimpack"
+	DropItem "DropedRifle" 10
+	DropItem "stimpack" 15
 	DropItem "armorbonus"
-	DropItem "DropedGrenade" 7
+	DropItem "DropedGrenade" 5
 	Obituary "%o has been gunned down by a Zombie Soldier."
 	damagefactor "Taunt", 1.0
 	DamageFactor "CauseObjectsToSplash", 0.0
@@ -2927,7 +2927,7 @@ ACTOR PinnedZombiemanTorso
 Actor Vanilla_ZombieMan : Zombie_Man
 {
 	DropItem "DropedVanillaRifle" 256
-	DropItem "stimpack" 80
+	DropItem "stimpack" 15
 	DropItem "armorbonus" 100
 	DropItem "DropedGrenade" 5
 	States

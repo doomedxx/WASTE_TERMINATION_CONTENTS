@@ -7,7 +7,7 @@ ACTOR BlueCardMOD: BlueCard Replaces BlueCard {
 ACTOR ASGGuy : ShotgunGuy1 Replaces ShotgunGuy
 {
 //$Category Z2M3_Monsters
-    Health 65
+    Health 650
     Radius 18
 	Height 48
 	Height 48
