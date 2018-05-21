@@ -44,7 +44,7 @@ maps
 			resource3
 			{
 				type = 1;
-				location = "C:\\Games\\Doom2\\Custom\\CONTENT\\WASTE_TERMINATION_CONTENTS";
+				location = "C:\\Users\\wesle\\Documents\\GitHub\\reversi222\\WASTE_TERMINATION_CONTENTS";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
@@ -66,9 +66,9 @@ maps
 		overridebrightness = false;
 		uselongtexturenames = false;
 		useresourcesinreadonlymode = false;
-		viewpositionx = 1072.499f;
-		viewpositiony = 3120.304f;
-		viewscale = 0.9059238f;
+		viewpositionx = -3208.562f;
+		viewpositiony = 4406.333f;
+		viewscale = 0.9059227f;
 		
 		grid
 		{
@@ -161,6 +161,8 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
+				caretposition = 326;
+				firstvisibleline = 3;
 				activetab = true;
 			}
 		}
@@ -321,5 +323,167 @@ maps
 		overrideceiltexture = false;
 		defaultwalltexture = "DOORTRAK";
 		defaultbottomtexture = "DOORTRAK";
+	}
+	
+	TITLEMAP
+	{
+		
+		resources
+		{
+			
+			resource0
+			{
+				type = 0;
+				location = "C:\\Games\\Doom2\\DOOM2.WAD";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+			
+			resource1
+			{
+				type = 2;
+				location = "C:\\Games\\Doom2\\Project Brutality 3.0 Test 1-7-18.pk3";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+			
+			resource2
+			{
+				type = 0;
+				location = "C:\\Games\\Doom2\\wads\\cc4-tex.wad";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+			
+			resource3
+			{
+				type = 1;
+				location = "C:\\Users\\wesle\\Documents\\GitHub\\reversi222\\WASTE_TERMINATION_CONTENTS";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
+		}
+		defaultfloortexture = "BRICK10";
+		defaultceiltexture = "BRICKZDA";
+		defaulttoptexture = "BRICKZDA";
+		defaultwalltexture = "BRICKZDA";
+		defaultbottomtexture = "BRICKZDA";
+		custombrightness = 196;
+		customfloorheight = 0;
+		customceilheight = 128;
+		overridefloortexture = false;
+		overrideceiltexture = false;
+		overridetoptexture = false;
+		overridemiddletexture = false;
+		overridebottomtexture = false;
+		overridefloorheight = false;
+		overrideceilheight = false;
+		overridebrightness = false;
+		uselongtexturenames = false;
+		useresourcesinreadonlymode = false;
+		viewpositionx = 455.6519f;
+		viewpositiony = 1446.817f;
+		viewscale = 0.844998f;
+		scriptcompiler = "zdoom_acs.cfg";
+		
+		grid
+		{
+			background = "";
+			backsource = 0;
+			backoffsetx = 0;
+			backoffsety = 0;
+			backscalex = 100;
+			backscaley = 100;
+			gridsize = 32f;
+		}
+		
+		fieldtypes
+		{
+			
+			linedef
+			{
+				arg0str = 2;
+				alpha = 1;
+			}
+			
+			sidedef
+			{
+				offsetx_mid = 1;
+				offsetx_bottom = 1;
+				offsetx_top = 1;
+				scalex_bottom = 1;
+				scalex_mid = 1;
+				scaley_mid = 1;
+				offsety_mid = 1;
+				offsety_top = 1;
+				offsety_bottom = 1;
+				scaley_bottom = 1;
+				light = 0;
+				scalex_top = 1;
+				scaley_top = 1;
+			}
+			
+			sector
+			{
+				lightcolor = 0;
+				fadecolor = 0;
+				fogdensity = 0;
+				desaturation = 1;
+				xpanningceiling = 1;
+				ypanningceiling = 1;
+				rotationceiling = 1;
+				xscaleceiling = 1;
+				yscaleceiling = 1;
+				xpanningfloor = 1;
+				ypanningfloor = 1;
+				rotationfloor = 1;
+				xscalefloor = 1;
+				yscalefloor = 1;
+				floor_reflect = 1;
+				floorglowcolor = 0;
+				floorterrain = 2;
+				ceilingterrain = 2;
+				lightceiling = 0;
+				lightfloor = 0;
+				alphaceiling = 1;
+				damagetype = 2;
+				floorglowheight = 1;
+				damageinterval = 0;
+				damageamount = 0;
+			}
+			
+			thing
+			{
+				arg0str = 2;
+			}
+		}
+		
+		scriptdocuments
+		{
+			
+			document0
+			{
+				filename = "DIALOGUE";
+				hash = 3588187714;
+				resource;
+				tabtype = 0;
+				scripttype = 18;
+			}
+			
+			document1
+			{
+				filename = "SCRIPTS";
+				hash = 3469170009;
+				resource;
+				tabtype = 0;
+				scripttype = 1;
+				caretposition = 287;
+				activetab = true;
+			}
+		}
 	}
 }

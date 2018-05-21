@@ -714,13 +714,14 @@ ListMenu "MainMenu"
 {
 	IfGame(Doom, Chex)
 	{
-		StaticPatch 80, -10, "M_DOOMPB"
-		Position 85, 66
+		Selector "", 0, 0
+		Font "SMALLFONT", WHITE
+		StaticPatch -75, -95, "TEMPLOGO"
+		Position -40, 165
 	}
 	IfGame(Doom, Strife, Chex)
 	{
-		TextItem "Start Campaign", "n", "PlayerclassMenu"
-		Selector "M_SKULL1", -30, -8
+		TextItem "Start Campaign", "n", "Skillmenu"
 		ifOption(SwapMenu)
 		{
 			TextItem "Continue", "l", "LoadGameMenu"
@@ -730,7 +731,6 @@ ListMenu "MainMenu"
 		else
 		{
 			TextItem "Options", "o", "OptionsMenu"
-			TextItem "Project Brutality", "b", "BDSettings"
 			TextItem "Continue", "l", "LoadGameMenu"
 		}
 		ifOption(ReadThis)
@@ -739,30 +739,14 @@ ListMenu "MainMenu"
 		}
 		TextItem "Quit Game", "q", "QuitMenu"
 	}
-	
-	IfGame(Heretic, Hexen)
-	{
-		TextItem "$MNU_NEWGAME", "n", "PlayerclassMenu"
-		TextItem "$MNU_OPTIONS", "o", "OptionsMenu"
-		TextItem "Project Brutality Settings", "b", "BDSettings"
-		TextItem "$MNU_GAMEFILES", "g", "GameFilesMenu"
-		TextItem "$MNU_INFO", "i", "ReadThisMenu"
-		TextItem "$MNU_QUITGAME", "q", "QuitMenu"
-	}
 }
 
-ListMenu "PlayerclassMenu"
-{
-	StaticTextCentered 160, 15, "Select Game Mode"
-	Position 71, 50
-	Selector "M_SKULL1", -30, -8
-}
 
 ListMenu "SkillMenu"
 {
-	StaticTextCentered 160, 15, "Select Difficulty"
-	Position 51, 50
-	Selector "M_SKULL1", -30, -8
+		Font "SMALLFONT", WHITE
+		StaticPatch -75, -95, "TEMPLOGO"
+		Position -40, 165
 }
 
 OptionValue "DisabledOption"

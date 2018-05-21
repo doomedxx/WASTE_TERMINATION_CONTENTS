@@ -21,7 +21,6 @@ Skill easy
    Textcolor = Green
    DisableCheats
    Name = "Easy"
-   MustConfirm = "Enemy health is low. Plenty of ammo in the world. Enemy count is lowered"
 }
 
 Skill normal
@@ -34,7 +33,6 @@ Skill normal
    Textcolor = Gold
    DisableCheats
    Name = "Medium"
-   MustConfirm = "Recommended gamemode. Enemy's are agressive, plenty of pickups, forgiving experience"
 }
 
 Skill Hard
@@ -46,8 +44,7 @@ Skill Hard
    SpawnFilter = Nightmare
    Textcolor = Red
    DisableCheats
-   Name = "Hard as fuck!"
-   MustConfirm = "Enemy's are fast. Ammo is rare. Enemy health is high.."
+   Name = "Insane"
 }
 
 Skill Realism
@@ -60,7 +57,6 @@ Skill Realism
    Textcolor = Purple
    DisableCheats
    Name = "Realistic - Easy"
-   MustConfirm = "More realistic variables are used here. Expect a higher damage input and output along with slower paced combat. Harder version increase the damage input"
 }
 
 Skill RealismHard
@@ -73,7 +69,6 @@ Skill RealismHard
    Textcolor = Purple
    DisableCheats
    Name = "Realistic - Extreme"
-   MustConfirm = "More realistic variables are used here. Expect a higher damage input and output along with slower paced combat. Harder version increase the damage input"
 }
 
 GameInfo
