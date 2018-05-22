@@ -53,6 +53,7 @@ vo/activate			VOactivate
 vo/broken			broken
 vo/downhere			downhere
 vo/copy				copy
+vo/uachelp			uachelp
 // GRENADE THROW SOUNDS///////////////////////////////
 
 impact/glassh1	glassh1
@@ -145,6 +146,7 @@ dest/hcrate3		hcrate3
 dest/pipebur1		pipebur
 dest/crash1			crash1
 dest/metal1			metal
+
 
 
 door/door1		DSDOROPN

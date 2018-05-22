@@ -44,7 +44,7 @@ Actor RifleUpgrade: Custominventory
 	+INVENTORY.ALWAYSPICKUP
 	+COUNTITEM
 	Inventory.Pickupsound "misc/rockboxa"
-	Inventory.PickupMessage "You got the DMR Grenade Launcher Upgrade!!!"
+	Inventory.PickupMessage "+ RIfle Upgrade"
 	States
 	{
 	Spawn:
@@ -90,7 +90,7 @@ ACTOR Rifle : Weapon
 	Obituary "%o was shot down by %k's DMR."
     AttackSound "None"
     Inventory.PickupSound "CLIPIN"
-	Inventory.Pickupmessage "You got the UAC30 DMR! (Slot 4)"
+	Inventory.Pickupmessage "+ UAC-30 DMR"
 	+WEAPON.WIMPY_WEAPON
     +WEAPON.NOAUTOAIM
     +WEAPON.NOALERT

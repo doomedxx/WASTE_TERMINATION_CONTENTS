@@ -5,7 +5,7 @@
 // HUD BASIC CONFIGURATION
 
 Base Doom;
-Resolution 640, 400;
+Resolution 1920, 1080;
 CompleteBorder true;
 Height 0;
 StatusBar Fullscreen, FullscreenOffsets
@@ -28,7 +28,7 @@ DrawNumber 3, digifont_large1, LIGHTBLUE, HandGrenadeAmmo, Alignment(right), whe
 // AMMO
 DrawImage "HAMMO", 	642+center, -170, center;
 DrawNumber 3, digifont_large1, LIGHTBLUE, ammo2, Alignment(right), 662+center, -196;
-DrawNumber 3, DIGIFONT_SMALL, LIGHTBLUE, ammo1, Alignment(right), 572+center, -196;
+DrawNumber 3, digifont_large1, LIGHTBLUE, ammo1, Alignment(right), 572+center, -196;
 
 }
 
@@ -38,11 +38,11 @@ StatusBar Normal, FullscreenOffsets
 
 // HEALTH
 DrawImage "HHEALTH", -650+center, -110, center;
-DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -642+center, -136;
+DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -645+center, -133;
 
 // ARMOR
 DrawImage "HARMOR", -350+center, -110, center;
-DrawNumber 3, digifont_large1, LIGHTBLUE, Armor, Alignment(right), -342+center, -136;
+DrawNumber 3, digifont_large1, LIGHTBLUE, Armor, Alignment(right), -345+center, -133;
  
 // GRENADE
 DrawImage "HNADE", 	692+center, -205, center;
@@ -51,5 +51,12 @@ DrawNumber 3, digifont_large1, LIGHTBLUE, HandGrenadeAmmo, Alignment(right), whe
 // AMMO
 DrawImage "HAMMO", 	642+center, -110, center;
 DrawNumber 3, digifont_large1, LIGHTBLUE, ammo2, Alignment(right), 662+center, -137;
-DrawNumber 3, DIGIFONT_SMALL, LIGHTBLUE, ammo1, Alignment(right), 572+center, -140;
+DrawNumber 3, DIGINUMBER1, LIGHTBLUE, ammo1, Alignment(right), 572+center, -140;
+
+IsSelected Rifle 
+	{
+		DRAWSTRING UDVSMALL, LIGHTBLUE, weapontag, 662+center, -150;
+	}
+
+
 }

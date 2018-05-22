@@ -18,7 +18,7 @@ Skill easy
    MonsterHealth = 0.75
    Aggressiveness = 1
    SpawnFilter = Normal
-   Textcolor = Green
+   Textcolor = white
    DisableCheats
    Name = "Easy"
 }
@@ -30,7 +30,7 @@ Skill normal
    MonsterHealth = 0.90
    Aggressiveness = 1
    SpawnFilter = Hard
-   Textcolor = Gold
+   Textcolor = white
    DisableCheats
    Name = "Medium"
 }
@@ -42,7 +42,7 @@ Skill Hard
    Aggressiveness = 1
    MonsterHealth = 1.8
    SpawnFilter = Nightmare
-   Textcolor = Red
+   Textcolor = white
    DisableCheats
    Name = "Insane"
 }
@@ -54,7 +54,7 @@ Skill Realism
    MonstertHealth = 0.3
    Aggressiveness = 1
    SpawnFilter = Nightmare
-   Textcolor = Purple
+   Textcolor = white
    DisableCheats
    Name = "Realistic - Easy"
 }
@@ -66,7 +66,7 @@ Skill RealismHard
    MonstertHealth = 1.4
    Aggressiveness = 1
    SpawnFilter = Nightmare
-   Textcolor = Purple
+   Textcolor = white
    DisableCheats
    Name = "Realistic - Extreme"
 }

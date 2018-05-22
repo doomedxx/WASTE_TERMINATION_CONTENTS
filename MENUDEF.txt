@@ -1,6 +1,6 @@
-OptionMenu "OptionsMenu"
+OptionMenu "OptionsMenu2"
 {
-	Title "POOP"
+	Title "SETTINGS"
 	//Submenu "Brutal Doom Options",			"BrutalOptions"
 	Submenu "Project Brutality Settings",		"BDSettings"
 	StaticText " "
@@ -8,19 +8,15 @@ OptionMenu "OptionsMenu"
 	Submenu "Mouse options",			"MouseOptions"
 	Submenu "Joystick options",			"JoystickOptions"
 	StaticText " "
-	Submenu "Player Setup",				"PlayerMenu"
 	Submenu "Gameplay Options",			"GameplayOptions"
 	Submenu "Compatibility Options",	"CompatibilityOptions"
-	Submenu "Automap Options",			"AutomapOptions"
 	Submenu "HUD Options",				"HUDOptions"
-	Submenu "Miscellaneous Options",	"MiscOptions"
 	Submenu "Sound Options",			"SoundOptions"
 	Submenu "Display Options",			"VideoOptions"
 	Submenu "Set video mode",			"VideoModeMenu"
 	StaticText " "
 	SafeCommand "Reset to defaults",	"reset2defaults"
-	SafeCommand	"Reset to last saved",	"reset2saved"
-	Command "Go to console",			"menuconsole"
+
 }
 
 
@@ -725,12 +721,12 @@ ListMenu "MainMenu"
 		ifOption(SwapMenu)
 		{
 			TextItem "Continue", "l", "LoadGameMenu"
-			TextItem "Options", "o", "OptionsMenu"
+			TextItem "Options", "o", "OptionsMenu2"
 			TextItem "BD Options", "b", "BDSettings"
 		}
 		else
 		{
-			TextItem "Options", "o", "OptionsMenu"
+			TextItem "Options", "o", "OptionsMenu2"
 			TextItem "Continue", "l", "LoadGameMenu"
 		}
 		ifOption(ReadThis)
@@ -744,9 +740,14 @@ ListMenu "MainMenu"
 
 ListMenu "SkillMenu"
 {
-		Font "SMALLFONT", WHITE
-		StaticPatch -75, -125, "TEMPLOGO"
-		Position -40, 185
+	IfGame(Doom, Chex)
+	{
+		Font "SMALLFONT", LIGHTBLUE
+		StaticText -40, 140 , "DIFFICULTY: ", LIGHTBLUE 
+		Selector "", 0, 0
+		Font "SMALLFONT", RED
+		Position -40, 140
+	}
 }
 
 OptionValue "DisabledOption"

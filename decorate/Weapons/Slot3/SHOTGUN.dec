@@ -184,7 +184,7 @@ ACTOR Shot_Gun : Shotgun Replaces Shotgun
 	Weapon.AmmoGive2 0
 	Weapon.AmmoType1 "NewShell"
 	Weapon.AmmoType2 "ShotgunAmmo"
-	Inventory.PickupMessage "You got the Pump Shotgun! (Slot 3)"
+	Inventory.PickupMessage "+ SHOTGUN"
     Inventory.PickupSound "SHOTPICK"
 	Obituary "%o sucked %k's Shotgun"
     AttackSound "None"

@@ -3,6 +3,11 @@ BIGFONT
 	Template fontb%03d
 }
 
+UDVSMALL
+{
+	Template DSSCR%03d
+}
+
 DIGINUMBER1
    {
        0 DIGNUM0S
@@ -17,11 +22,7 @@ DIGINUMBER1
        9 DIGNUM9S
        - DIGMINUS    
    }
-   
-   
-   
-///////////////////////////////////////////////////// 
-// Full Helmet HUD   
+     
 AMMOFONT
 	{
 		0 STYSNUM0
@@ -35,7 +36,7 @@ AMMOFONT
 		8 STYSNUM8
 		9 STYSNUM9
 	}
-
+	
 DIGIFONT_SMALL
 {
 	0 DIGINUM0
