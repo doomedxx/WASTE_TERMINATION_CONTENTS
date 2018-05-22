@@ -55,6 +55,7 @@ vo/downhere			downhere
 vo/copy				copy
 vo/uachelp			uachelp
 vo/welcome			welcome
+vo/smoke			smoke
 // GRENADE THROW SOUNDS///////////////////////////////
 
 impact/glassh1	glassh1
