@@ -54,6 +54,7 @@ vo/broken			broken
 vo/downhere			downhere
 vo/copy				copy
 vo/uachelp			uachelp
+vo/welcome			welcome
 // GRENADE THROW SOUNDS///////////////////////////////
 
 impact/glassh1	glassh1
