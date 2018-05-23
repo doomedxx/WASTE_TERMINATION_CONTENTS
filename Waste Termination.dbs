@@ -49,6 +49,15 @@ maps
 				option2 = 0;
 				notfortesting = 0;
 			}
+			
+			resource4
+			{
+				type = 2;
+				location = "C:\\Users\\wesle\\Documents\\GitHub\\reversi222\\WASTE_TERMINATION_CONTENTS\\beamflashlight.pk3";
+				option1 = 0;
+				option2 = 0;
+				notfortesting = 0;
+			}
 		}
 		defaulttoptexture = "BRICKZDA";
 		overridemiddletexture = false;
@@ -66,8 +75,8 @@ maps
 		overridebrightness = false;
 		uselongtexturenames = false;
 		useresourcesinreadonlymode = false;
-		viewpositionx = 614.984f;
-		viewpositiony = 2006.581f;
+		viewpositionx = 2039.126f;
+		viewpositiony = 997.4682f;
 		viewscale = 0.4735596f;
 		
 		grid
@@ -161,8 +170,8 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
-				caretposition = 22120;
-				firstvisibleline = 768;
+				caretposition = 21345;
+				firstvisibleline = 730;
 				activetab = true;
 			}
 		}
