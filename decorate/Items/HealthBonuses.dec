@@ -8,7 +8,7 @@ ACTOR HealthPlus : healthbonus
 	+INVENTORY.ALWAYSPICKUP
 	Inventory.Amount 2
 	Inventory.MaxAmount 9999
-	Inventory.PickupMessage "$GOTHTHBONUS"
+	Inventory.PickupMessage "+2 Health"
 	Inventory.PickUpSound "misc/bonus_PickUp"
 	Health.LowMessage 25, "That's not enough health to manage."
 	states
@@ -28,7 +28,7 @@ ACTOR StrongHealthPlus : Health
 	+INVENTORY.ALWAYSPICKUP
 	Inventory.Amount 4
 	Inventory.MaxAmount 9999
-	Inventory.PickupMessage "Picked up a strong health bonus."
+	Inventory.PickupMessage "+4 Health"
 	Inventory.PickUpSound "items/stronghealthbonus"
 	Health.LowMessage 25, "That amount of health won't cut it."
 	States
@@ -48,7 +48,7 @@ ACTOR SuperHealthPlus : Health
 	+INVENTORY.ALWAYSPICKUP
 	Inventory.Amount 6
 	Inventory.MaxAmount 9999
-	Inventory.PickupMessage "Picked up a super health bonus."
+	Inventory.PickupMessage "+6 Health"
 	Inventory.PickUpSound "items/superhealthbonus"
 	Health.LowMessage 25, "Some good health, but not good enough."
 	States
@@ -79,7 +79,7 @@ ACTOR HealthInfusionKitT1 : CustomInventory
 	Inventory.Amount 1
 	Inventory.MaxAmount 20
 	Inventory.InterHubAmount 20
-	Inventory.PickupMessage "Picked up a Health Infusion Kit."
+	Inventory.PickupMessage "+ Health Infusion Kit"
 	Inventory.PickupSound "misc/hbonus_pickup"
 	Inventory.UseSound "Items/HealthInfuser"
 	Inventory.Icon "IB1ME0"
@@ -115,7 +115,7 @@ ACTOR HealthInfusionKitT2 : CustomInventory
 	Inventory.Amount 1
 	Inventory.MaxAmount 20
 	Inventory.InterHubAmount 20
-	Inventory.PickupMessage "Picked up a Strong Health Infusion Kit."
+	Inventory.PickupMessage "+ Strong Health Infusion Kit."
 	Inventory.PickupSound "misc/hbonus_pickup"
 	Inventory.UseSound "Items/HealthInfuser"
 	Inventory.Icon "IB2ME0"
@@ -151,7 +151,7 @@ ACTOR HealthInfusionKitT3 : CustomInventory
 	Inventory.Amount 1
 	Inventory.MaxAmount 20
 	Inventory.InterHubAmount 20
-	Inventory.PickupMessage "Picked up a Super Health Infusion Kit."
+	Inventory.PickupMessage "+ Super Health Infusion Kit."
 	Inventory.PickupSound "misc/hbonus_pickup"
 	Inventory.UseSound "Items/HealthInfuser"
 	Inventory.Icon "IB3ME0"

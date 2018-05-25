@@ -95,7 +95,7 @@ ACTOR NormalGrenadeBox : CustomInventory
 	+DONTGIB
 	+FLOORCLIP
 	Inventory.pickupsound "OPNGRN"
-	Inventory.PickupMessage "Picked up a box of 3 Frag Grenades and 4 Land Mines."
+	Inventory.PickupMessage "+ 3 Frag Grenades, + 4 Land Mines."
 	States
 	{
 		Spawn:
@@ -116,7 +116,7 @@ ACTOR SingleHandGrenade : CustomInventory
 	Scale 0.5
 	+DONTGIB
 	+FLOORCLIP
-	Inventory.PickupMessage "Picked up a UAC-M26 Frag Grenade."
+	Inventory.PickupMessage "+ Handgrenade"
 	Inventory.PickupSound "GRNPIN"
 	States
 	{
@@ -137,7 +137,7 @@ ACTOR SingleLandMine : CustomInventory
 	Scale 0.4
 	+DONTGIB
 	+FLOORCLIP
-	Inventory.PickupMessage "Picked up a Land Mine."
+	Inventory.PickupMessage "+ Landmine"
     Inventory.PickUpSound "misc/rocket_PickUp"
 	Inventory.Amount 1
 	States

@@ -44,16 +44,7 @@ maps
 			resource3
 			{
 				type = 1;
-				location = "C:\\Users\\wesle\\Documents\\GitHub\\reversi222\\WASTE_TERMINATION_CONTENTS";
-				option1 = 0;
-				option2 = 0;
-				notfortesting = 0;
-			}
-			
-			resource4
-			{
-				type = 2;
-				location = "C:\\Users\\wesle\\Documents\\GitHub\\reversi222\\WASTE_TERMINATION_CONTENTS\\beamflashlight.pk3";
+				location = "C:\\Games\\Doom2\\Custom\\CONTENT\\WASTE_TERMINATION_CONTENTS";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
@@ -75,9 +66,9 @@ maps
 		overridebrightness = false;
 		uselongtexturenames = false;
 		useresourcesinreadonlymode = false;
-		viewpositionx = 2135.921f;
-		viewpositiony = 853.5167f;
-		viewscale = 0.4735596f;
+		viewpositionx = -5875.676f;
+		viewpositiony = 2068.693f;
+		viewscale = 0.8003138f;
 		
 		grid
 		{
@@ -126,12 +117,12 @@ maps
 				floorglowcolor = 0;
 				xpanningceiling = 1;
 				ypanningceiling = 1;
-				rotationceiling = 17;
+				rotationceiling = 1;
 				xscaleceiling = 1;
 				yscaleceiling = 1;
 				xpanningfloor = 1;
 				ypanningfloor = 1;
-				rotationfloor = 17;
+				rotationfloor = 1;
 				xscalefloor = 1;
 				yscalefloor = 1;
 				floorterrain = 2;
@@ -170,8 +161,8 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
-				caretposition = 21345;
-				firstvisibleline = 730;
+				caretposition = 26322;
+				firstvisibleline = 911;
 				activetab = true;
 			}
 		}

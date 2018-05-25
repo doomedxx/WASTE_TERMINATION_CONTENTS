@@ -1,3 +1,4 @@
+
 //Life sphere
 ACTOR NewLifeSphere : CustomInventory
 {

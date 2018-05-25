@@ -1,0 +1,3 @@
+addkeysection "Waste Termination Controls" 5
+addmenukey "Show Objectives" printObjectives
+alias printObjectives "puke 999"

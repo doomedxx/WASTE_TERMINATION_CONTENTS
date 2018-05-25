@@ -11,7 +11,7 @@ ACTOR HighExplosiveGrenadeRounds : Ammo
 	Inventory.Icon "LHEGA0"
 	Inventory.PickUpSound "misc/rockboxa"
 	Tag "$TAG_HEGRENADES"
-	Inventory.PickupMessage "You found High Explosive Grenade Rounds"
+	Inventory.PickupMessage "+6 High Explosive Grenade Rounds"
 	States
 	{
 	Spawn:
@@ -33,7 +33,7 @@ ACTOR SpecialGrenadeRounds : Ammo
 	Inventory.Icon "LPHGA0"
 	Tag "$TAG_PHGRENADES"
 	Inventory.PickUpSound "misc/rockboxa"
-	Inventory.PickupMessage "$You found Special Grenade Rounds"
+	Inventory.PickupMessage "+ 4 Special Grenade Rounds"
 	States
 	{
 	Spawn:
@@ -55,7 +55,7 @@ ACTOR PistolBullets : Ammo
 	Ammo.BackpackMaxAmount 400
 	Inventory.Icon "MBLKA0"
 	Tag "$TAG_CLIPOFBULLETS"
-	Inventory.PickupMessage "Picked up a Small Caliber Magazine"
+	Inventory.PickupMessage "+10 Pistol Bullets"
 	States
 	{
 	Spawn:

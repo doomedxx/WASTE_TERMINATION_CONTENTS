@@ -75,7 +75,7 @@ actor ZombieHelmet : armorbonus
 	SpawnID 22
 	Radius 20
 	Height 16
-	Inventory.Pickupmessage "$+1 Armor"
+	Inventory.Pickupmessage "+1 Armor"
 	Inventory.Icon "DGVBA0"
 	Armor.Savepercent 33.335
 	Armor.Saveamount 1

@@ -3,6 +3,31 @@
 // Carbine Rifle Zombie
 //
 //===========================================================================
+ACTOR Test1 : Inventory
+{
+   Inventory.PickupSound "misc/chat"
+   Inventory.PickupMessage "message"
+   +Floorclip
+   +ALWAYSPICKUP
+   States
+   {
+   Spawn:
+   PISG A 1 acs_execute(1, 0)
+   SARG A 4
+   SARG B 4
+   LOOP
+   PICKUP:
+   TROO A 1 A_GiveInventory("ARMOR",100)
+   PISG A 1 acs_execute(1, 0)
+   TROO B 1 A_TakeInventory("Test1",1) 
+   Goto DEATH
+   DEATH:
+   PISG A 1 acs_execute(1, 0)
+   TROO A 1
+   Stop
+   }
+}
+
 ACTOR ARZombieMan: Zombie_Man Replaces ZombieMan
 {
 	Game Doom
