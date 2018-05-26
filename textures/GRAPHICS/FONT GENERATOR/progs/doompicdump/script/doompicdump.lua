@@ -1,0 +1,678 @@
+--[[
+	Name:       doompicdump
+	Purpose:    batch convert images to png and insert grAb chunk
+	Licence:    GNU General Public License.
+--]]
+
+
+--[[---------------------------- globals	----------------------------]]
+
+DS = package.path:match( "(%p)%?%." ) -- directory seperator
+CS = " && "		-- command seperator
+CWD = wx.wxGetCwd()
+
+xmlResource = nil 	-- the XML resource handle
+Frame = nil   		-- the main wxFrame
+Picker = nil   		-- the file picker control
+Preview = nil   		-- the child wxPanel in the wxFrame to draw on
+InfoText = nil   	
+RefreshBtn = nil
+ConfigBtn = nil
+HelpBtn = nil
+CancelBtn = nil
+DumpBtn = nil
+Offset = 0		-- offset of image in folder to show
+WaitMessage = nil	-- a dialog box
+
+Bitmaps = 0; Lumps = 0
+
+bitmap = nil
+Dir = wx.wxDir()
+
+ShowPreview = true
+LockMask = false
+
+guessmask = false
+
+--[[------------------------- functions	----------------------------]]
+
+function exists(fname)
+        local f = io.open(fname, "r")
+        if (f and f:read()) then return true end
+end
+
+function writable(fname)
+        local f = io.open(fname, "w")
+        if (f and f:write(".")) then return true end
+end
+
+
+use_temp_folder = false
+temp_initted = false
+temp_file = ""
+function tempName() -- return the name of a temporary file to use.
+ 
+  if temp_file == "" then
+    temp_file = os.tmpname()..".png"
+    if writable(temp_file) == false then
+      temp_file = CWD..DS.."temp.png"
+    end
+  end
+  if temp_file ~= "" then
+    return temp_file
+  else
+    wx.wxMessageBox("oh no, temp folder weirdness...", "Errzorz.", wx.wxICON_ERROR + wx.wxOK, Frame)
+  end
+end
+
+function RunCommand(cmd)
+    local a; local b; local c
+	if DS == "\\" then
+        cmd = CWD..DS.."util"..DS..cmd
+        --print(cmd)
+		a, b, c = wx.wxExecuteStdoutStderr(cmd, wx.wxEXEC_SYNC)
+        --for i,v in ipairs(b) do print(i,v) end
+        --for i,v in ipairs(c) do print(i,v) end
+	else
+        --print(cmd)
+		a = os.execute(cmd)
+        --print(a)
+	end
+end
+
+function Validate()	-- make sure user isn't doing anything dumb...
+
+
+	local msgs = 
+	{
+		"Please select a folder with images to convert. \n"..
+		"Make sure you have chosen a valid image format."
+		,
+		"No images were found, but some lump files were found. \n"..
+		"Apply offsets from lump files to pngs in the output folder?"
+		,
+		"You are about to overwrite all of the png images in the current folder. \n\n"..
+		"Are you sure you want to continue?"
+		,
+		"Forcing an alpha cutoff is slow, and is not recommended unless bicubic scaling is being used. \n\n"..
+		"Are you sure you want to continue?"
+	}
+	
+	if Bitmaps == 0 then 
+		if Lumps == 0 or LumpCheck:IsChecked() == false then
+			wx.wxMessageBox(msgs[1], "No images to convert.", wx.wxICON_ERROR + wx.wxOK, Frame)
+			return false 
+		else
+			local r = wx.wxMessageBox(msgs[2], "Only lumps found", wx.wxYES_NO, Frame)
+			if r == wx.wxNO then return false end
+		end
+	end
+	
+	if ImageType:GetValue() == "png" and OutDirText:GetValue() == "" then
+		local r = wx.wxMessageBox(msgs[3], "Overwrite warning", wx.wxYES_NO, Frame)
+		if r == wx.wxNO then return false end
+	end
+	
+	if AlphaCheck:GetValue() and (ScaleSpin:GetValue() == 100 or ScaleChoice:GetCurrentSelection() == 0) then
+		local r = wx.wxMessageBox(msgs[4], "Unnecessary slowness warning", wx.wxYES_NO, Frame)
+		if r == wx.wxNO then return false end
+	end
+	
+	return true
+end
+
+--
+--	CONVERSION STUFF
+--
+
+DoConvert = function ()
+	
+	local p = Picker:GetPath()
+	local bmps = 0; local lmps = 0
+	local result = ""
+	local outdir = OutDirText:GetValue()
+	local outpath = p
+	local cmd = ""
+	
+	if not Dir:Open(p) then return end
+	
+	--os.execute("echo . > log.txt")
+	
+	-- process bitmaps
+	isFile, file = Dir:GetFirst("*."..ImageType:GetValue())
+	
+	if isFile then
+		if outdir ~= "" then
+			outpath = outpath..DS..outdir
+			if not os.rename (outpath, outpath) then 
+			    wx.wxMkdir(outpath)
+			end
+		end
+		
+		ImageToPng(p,file,outdir)
+		coroutine.yield()
+	else
+		return
+	end
+	
+	while isFile do
+		bmps = bmps + 1
+		isFile, file = Dir:GetNext()
+		if isFile then ImageToPng(p,file,outdir) end
+		coroutine.yield()
+	end
+	
+	result = bmps.." images processed"
+
+	if LumpCheck:IsChecked() then
+		
+		-- process lumps
+		isFile, file = Dir:GetFirst("*."..LumpType:GetValue())
+		
+		if isFile then
+			local pngfile =  outpath..DS..string.sub(file,1,string.len(file)-4)..".png"
+			cmd = BuildGrabCmd(p..DS..file, pngfile) 
+			RunCommand(cmd)
+			coroutine.yield()
+		else
+			return
+		end
+		
+		while isFile do
+			lmps = lmps + 1
+			isFile, file = Dir:GetNext()
+			pngfile =  outpath..DS..string.sub(file,1,string.len(file)-4)..".png"
+			if isFile then 
+				cmd = BuildGrabCmd(p..DS..file, pngfile) 
+				RunCommand(cmd)
+				coroutine.yield()
+			end
+		end
+
+		--os.execute("echo "..cmd.." >> log.txt")
+		
+		result = result.."\n"..lmps.." lumps processed"
+	end
+	
+	wx.wxMessageBox(result, "Done.", wx.wxOK + wx.wxICON_INFORMATION, Frame)
+	
+	return
+end
+
+--save event handler
+function Convert(event)
+
+	if not Validate() then return end
+
+	local co = coroutine.create(DoConvert)
+	
+	ProgressGauge:SetRange(Bitmaps + Lumps)
+	ProgressGauge:SetValue(0)
+		
+	WaitDialog:Show()
+	wx.wxBeginBusyCursor()
+	
+	while coroutine.status(co) ~= "dead" do
+		ProgressGauge:SetValue(ProgressGauge:GetValue()+1)
+		WaitDialog:Update()
+		coroutine.resume(co)
+	end
+	
+	WaitDialog:Hide()
+	wx.wxEndBusyCursor()
+	
+	if event then event:Skip() end
+end
+
+
+
+function ImageToPng(path,file,outdir)
+	local inpath; local outpath 
+	local r; local g; local b;
+	local color = ColorPicker:GetColour()
+	local scale = ScaleSpin:GetValue()
+	local img = wx.wxImage()
+	
+	if path ~= _ then
+		inpath = path..DS..file
+		outpath = path..DS..outdir..DS..string.sub(file,1,string.len(file)-4)..".png"
+	else		-- if path is not used, file and outdir are absolute paths
+		inpath, outpath = file, outdir
+	end
+		
+	img:LoadFile(inpath)
+	if img and img:Ok() then
+		
+		if MaskCheck:GetValue() then -- handle mask color	
+			r,g,b	= color:Red(), color:Green(), color:Blue()
+			img:SetMaskColour(r, g, b)
+			if img:HasAlpha() == false then img:InitAlpha() end
+			img:SetMask(false)
+			img:Replace(r, g, b, 0, 0, 0)
+		end
+	
+		if scale ~= 100 and scale > 0 then -- scale image
+			local sc
+			
+			if ScaleChoice:GetCurrentSelection() == 1 then
+				sc  = wx.wxIMAGE_QUALITY_HIGH
+			else
+				sc  = wx.wxIMAGE_QUALITY_NORMAL
+			end
+			
+			img:Rescale(img:GetWidth() * (scale/100), img:GetHeight() * (scale/100), sc)
+			
+			if img:GetWidth() <= 0 or img:GetHeight() <= 0 then
+				img:delete()
+				return false
+			end
+			
+		end
+		
+		if AlphaCheck:GetValue() and img:HasAlpha() then -- handle 2-bit trancparency
+		
+			local cutoff = AlphaSlider:GetValue()
+			local x = 0; local y = 0
+			local w = img:GetWidth(); local h = img:GetHeight()
+			
+			while y < h do
+				while x < w do
+					if img:GetAlpha(x,y) < cutoff then
+						img:SetAlpha(x,y,0)
+					else
+						img:SetAlpha(x,y,255)
+					end
+					x = x+1
+				end
+				y = y+1
+				x = 0
+			end
+		end
+		
+		img:SaveFile(outpath)
+		
+		if not TrueCheck:IsChecked() then
+			RunCommand('pngquant -force -ordered 256 "'..outpath..'"')
+			os.remove(outpath)
+			os.rename(string.sub(outpath,1,string.len(outpath)-4).."-or8.png", outpath)
+		end
+		
+		if CompressCheck:IsChecked() then
+			os.rename(outpath, outpath..".png")
+			RunCommand('pngcrush "'..outpath..'.png" "'..outpath..'"')
+			os.remove(outpath..".png")
+		end
+		
+		img:delete()
+		return true
+	else
+		return false
+	end
+end
+
+function BuildGrabCmd(path, pngPath)
+	local grabX = 0; local grabY = 0
+	
+	-- read offset from lump file
+	local lumpFile = assert(io.open(path, "rb"))
+	lumpFile:seek("set", 4)
+	grabX = string.byte(lumpFile:read(1))
+	lumpFile:seek("set", 6)
+	grabY = string.byte(lumpFile:read(1))
+	lumpFile:close()
+	
+	-- adjust offset when scaling image
+	local s = ScaleSpin:GetValue() / 100
+	if grabX ~= -1 then grabX = grabX * s end
+	if grabY ~= -1 then grabY = grabY * s end
+	
+	return 'grabpng -grab '..grabX..' '..grabY..' "'..pngPath..'"'
+	
+end
+
+--
+--		PREVIEW STUFF
+--
+
+function HandlePreviewBtn (event)
+	local b = wx.wxBitmap()
+	
+	ShowPreview = not ShowPreview	-- toggle ShowPreview
+	
+	if ShowPreview then
+		b:LoadFile("res"..DS.."img"..DS.."preview.png", wx.wxBITMAP_TYPE_PNG)
+	else
+		b:LoadFile("res"..DS.."img"..DS.."preview-off.png", wx.wxBITMAP_TYPE_PNG)
+	end
+	
+	PreviewBtn:SetBitmapLabel(b)
+	b:delete()
+	guessmask = true
+	PreparePreview()
+	if event then event:Skip() end
+end
+
+function HandleTree (event)
+	Offset = 0
+	guessmask = true
+	PreparePreview()
+	if event then event:Skip() end
+end
+
+function HandleNext (event)
+	Offset = Offset + 1
+	guessmask = true
+	PreparePreview()
+	if event then event:Skip() end
+end
+
+function HandlePrev (event)
+	Offset = Offset - 1
+	guessmask = true
+	PreparePreview()
+	if event then event:Skip() end
+end
+
+function PreparePreview()
+	local p = Picker:GetPath()
+	local isFile; local file; local nextfile; local usefile
+	local bitmaps = 0; local lumps = 0
+	local didPreview = false	
+	
+	if not Dir:Open(p) then return end
+	
+	isFile, file = Dir:GetFirst("*."..ImageType:GetValue())
+	
+	if isFile then
+		while isFile do 
+			if nextfile then file = nextfile end
+			if Offset == bitmaps then 
+				usefile = file
+				didPreview = true
+			end
+			isFile, nextfile = Dir:GetNext()
+			bitmaps = bitmaps + 1 
+		end
+		if Offset < 0 then 
+			usefile = file
+			Offset = bitmaps - 1
+		elseif not didPreview then
+			_, file = Dir:GetFirst("*."..ImageType:GetValue()) 
+			usefile = file
+		end
+	else
+		if bitmap then bitmap:delete();  bitmap = nil end
+		ClearPreview()
+	end
+	
+	if Offset >= bitmaps then Offset = 0 end
+	
+	if usefile then 
+		GuessMask(p..DS..usefile) 
+		LoadPreview(p..DS..usefile) 
+		FileNameText:SetLabel(usefile)
+	else
+		FileNameText:SetLabel("")
+	end
+	
+	isFile, file = Dir:GetFirst("*."..LumpType:GetValue()) 
+	
+	if isFile then
+		lumps = 1
+		while Dir:GetNext() do lumps = lumps + 1 end
+	end
+	
+	Bitmaps, Lumps = bitmaps, lumps
+	
+	InfoText:SetLabel(p.."\n".."Images:"..bitmaps..", Lumps:"..lumps)
+	
+end
+
+ function LoadPreview (path)
+
+	local img = wx.wxImage()
+	local tmp = ""
+	
+	if ShowPreview then
+		tmp = tempName()
+		if ImageToPng(_,path,tmp) then
+			img:LoadFile(tmp)
+			os.remove(tmp)
+		else
+			ClearPreview()
+			img:delete()
+			return
+		end
+	else
+		img:LoadFile(path)
+	end
+	
+	if img and img:Ok() then
+		if bitmap then bitmap:delete();  bitmap = nil end
+		bitmap = wx.wxBitmap(img)
+		Preview:SetVirtualSize(wx.wxSize(img:GetWidth(), img:GetHeight()))
+		Preview:Scroll(0,0)
+		DrawPreview()
+		Preview:Refresh() -- needed for msw
+	end
+	img:delete()
+end
+
+ function DrawPreview (event)
+	-- draw the bitmap to the preview area
+	if bitmap and bitmap:Ok() then
+		local dc = wx.wxPaintDC(Preview)
+		Preview:PrepareDC(dc)
+		dc:Clear()
+		dc:DrawBitmap(bitmap, 0, 0, true)
+		dc:delete()
+	end
+	if event then event:Skip() end
+end
+
+ function ClearPreview ()
+	local dc = wx.wxPaintDC(Preview)
+	Preview:PrepareDC(dc)
+	-- clear the preview area
+	dc:Clear()
+	Preview:Refresh()
+	dc:delete()
+end
+
+--
+--		MISC
+--
+
+
+function HandleLockMaskBtn (event)
+	local b = wx.wxBitmap()
+	
+	LockMask = not LockMask	-- toggle ShowPreview
+	
+	if LockMask then
+		b:LoadFile("res"..DS.."img"..DS.."lock-locked.png", wx.wxBITMAP_TYPE_PNG)
+	else
+		b:LoadFile("res"..DS.."img"..DS.."lock.png", wx.wxBITMAP_TYPE_PNG)
+	end
+	
+	LockMaskBtn:SetBitmapLabel(b)
+	b:delete()
+	
+	guessmask = true
+	PreparePreview()
+	if event then event:Skip() end
+end
+
+function GuessMask(path)
+
+	if not guessmask or LockMask then return end
+	guessmask = false
+	
+	local img = wx.wxImage()
+	local usemask = true
+	local mask_r = 0
+	local mask_g = 0
+	local mask_b = 0
+	
+	img:LoadFile(path)
+	
+	if img and img:Ok() then
+	
+		if img:IsTransparent(0,0) then		-- wxImage::HasAlpha() seems broken...
+			usemask = false
+		elseif img:HasMask() then
+			mask_r, mask_g, mask_b = img:GetMaskRed(),  img:GetMaskGreen(),  img:GetMaskBlue()
+		else
+			mask_r, mask_g, mask_b = img:GetRed(0,0),  img:GetGreen(0,0),  img:GetBlue(0,0)
+		end
+		
+	end
+	
+	if usemask then
+		MaskCheck:SetValue(true)
+		ColorPicker:SetColour(wx.wxColour(mask_r, mask_g, mask_b))
+	else
+		MaskCheck:SetValue(false)
+	end
+	
+	img:delete()
+
+end
+
+--
+--		MAIN
+--
+
+-- main - entry point to this application
+function main()
+
+	-- declare main window
+	Frame = wx.wxFrame()
+	HelpDialog = wx.wxDialog()
+	WaitDialog = wx.wxDialog()
+
+
+	-- load xml resource
+	xmlResource = wx.wxXmlResource()
+	xmlResource:InitAllHandlers()
+	local xrcFilename = "./res/doompicdump.xrc"	-- wx.wxGetCwd()..
+
+	if not xmlResource:Load(xrcFilename) then
+		return	-- quit program
+	end	
+	
+	if not xmlResource:LoadFrame(Frame, wx.NULL, "Frame") then
+		return	-- quit program
+	end
+
+	xmlResource:LoadDialog(HelpDialog, Frame, "HelpDialog")
+	xmlResource:LoadDialog(WaitDialog, Frame, "WaitDialog")
+				
+	-- set up some global widgets
+	Picker = Frame:FindWindow("Picker"):DynamicCast("wxGenericDirCtrl")
+	Preview = Frame:FindWindow("Preview"):DynamicCast("wxScrolledWindow")
+	InfoText = Frame:FindWindow("InfoText"):DynamicCast("wxStaticText")
+	FileNameText = Frame:FindWindow("FileNameText"):DynamicCast("wxStaticText")
+	CancelBtn = Frame:FindWindow("CancelBtn"):DynamicCast("wxButton")
+	ConvertBtn = Frame:FindWindow("ConvertBtn"):DynamicCast("wxButton")
+	NextBtn = Frame:FindWindow("NextBtn"):DynamicCast("wxButton")
+	PrevBtn = Frame:FindWindow("PrevBtn"):DynamicCast("wxButton")
+	PreviewBtn = Frame:FindWindow("PreviewBtn"):DynamicCast("wxBitmapButton")
+	LockMaskBtn = Frame:FindWindow("LockMaskBtn"):DynamicCast("wxBitmapButton")
+	HelpBtn = Frame:FindWindow("HelpBtn"):DynamicCast("wxButton")
+	ImageType = Frame:FindWindow("ImageType"):DynamicCast("wxTextCtrl")
+	LumpType = Frame:FindWindow("LumpType"):DynamicCast("wxTextCtrl")
+	OutDirText = Frame:FindWindow("OutDirText"):DynamicCast("wxTextCtrl")
+	MaskCheck = Frame:FindWindow("MaskCheck"):DynamicCast("wxCheckBox")
+	TrueCheck = Frame:FindWindow("TrueCheck"):DynamicCast("wxCheckBox")
+	CompressCheck = Frame:FindWindow("CompressCheck"):DynamicCast("wxCheckBox")
+	LumpCheck = Frame:FindWindow("LumpCheck"):DynamicCast("wxCheckBox")
+	AlphaCheck = Frame:FindWindow("AlphaCheck"):DynamicCast("wxCheckBox")
+	AlphaSlider = Frame:FindWindow("AlphaSlider"):DynamicCast("wxSlider")
+	ColorPicker = Frame:FindWindow("ColorPicker"):DynamicCast("wxColourPickerCtrl")
+	ScaleSpin = Frame:FindWindow("ScaleSpin"):DynamicCast("wxSpinCtrl")
+	ScaleChoice = Frame:FindWindow("ScaleChoice"):DynamicCast("wxChoice")
+	
+	XlatCheck = Frame:FindWindow("XlatCheck"):DynamicCast("wxCheckBox")
+	XlatText = Frame:FindWindow("XlatText"):DynamicCast("wxTextCtrl")
+	
+	HelpText = HelpDialog:FindWindow("HelpText"):DynamicCast("wxTextCtrl")
+	CloseHelpBtn = HelpDialog:FindWindow("CloseHelpBtn"):DynamicCast("wxButton")
+	
+	ProgressGauge = WaitDialog:FindWindow("ProgressGauge"):DynamicCast("wxGauge")
+	
+			
+	--close event
+	Frame:Connect(wx.wxEVT_CLOSE_WINDOW,
+			function (event)
+				-- clean up global stuff
+				if bitmap then bitmap:delete() end
+				bitmap = nil
+				event:Skip()	-- ensure the event is passed on so that it is handled
+			end )
+			
+	-- handle cancel button
+	CancelBtn:Connect(wx.wxEVT_COMMAND_BUTTON_CLICKED,
+			function (event)	
+				Frame:Close(true)
+			end )
+			
+	NextBtn:Connect(wx.wxEVT_COMMAND_BUTTON_CLICKED, HandleNext)
+	PrevBtn:Connect(wx.wxEVT_COMMAND_BUTTON_CLICKED, HandlePrev)
+	PreviewBtn:Connect(wx.wxEVT_COMMAND_BUTTON_CLICKED, HandlePreviewBtn)
+	LockMaskBtn:Connect(wx.wxEVT_COMMAND_BUTTON_CLICKED, HandleLockMaskBtn)
+	ConvertBtn:Connect(wx.wxEVT_COMMAND_BUTTON_CLICKED, Convert)
+			
+	Picker:Connect(wx.wxEVT_COMMAND_TREE_SEL_CHANGED, HandleTree)
+	
+	-- update preview when settings are updated
+	MaskCheck:Connect(wx.wxEVT_COMMAND_CHECKBOX_CLICKED, PreparePreview)
+	AlphaCheck:Connect(wx.wxEVT_COMMAND_CHECKBOX_CLICKED, PreparePreview)
+	TrueCheck:Connect(wx.wxEVT_COMMAND_CHECKBOX_CLICKED, PreparePreview)
+	AlphaSlider:Connect(wx.wxEVT_COMMAND_SLIDER_UPDATED, PreparePreview)
+	ScaleChoice:Connect(wx.wxEVT_COMMAND_CHOICE_SELECTED, PreparePreview)
+	ScaleSpin:Connect(wx.wxEVT_COMMAND_SPINCTRL_UPDATED, PreparePreview)
+	ColorPicker:Connect(wx.wxEVT_COMMAND_COLOURPICKER_CHANGED, PreparePreview)
+	
+	XlatCheck:Connect(wx.wxEVT_COMMAND_CHECKBOX_CLICKED, 
+		function()
+			XlatText:Show(XlatCheck:IsChecked())
+			Frame:SendSizeEvent()
+		end)
+	
+	ImageType:Connect(wx.wxEVT_COMMAND_TEXT_UPDATED, 
+		function()
+			guessmask = true
+			PreparePreview()
+		end)
+	
+	
+	Preview:Connect(wx.wxEVT_PAINT, DrawPreview)
+	
+	
+	HelpBtn:Connect(wx.wxEVT_COMMAND_BUTTON_CLICKED, 
+			function()
+				if HelpText:GetNumberOfLines() < 2 then 
+					HelpText:LoadFile("readme.txt") 
+				end
+				HelpDialog:Show()
+			end)
+	CloseHelpBtn:Connect(wx.wxEVT_COMMAND_BUTTON_CLICKED, 
+			function()
+				HelpDialog:Hide()
+			end)
+	
+	OutDirText:SetValue("")
+	Preview:SetScrollbars(1, 1, 50, 50)
+	
+	Frame:SetSize(wx.wxSize(640,-1))
+	--Frame:SetMinSize(wx.wxSize(600,400))
+	Frame:Show(true)	--show the main window
+	
+	HandleTree()
+
+end
+
+
+main()	-- call main ;)
+

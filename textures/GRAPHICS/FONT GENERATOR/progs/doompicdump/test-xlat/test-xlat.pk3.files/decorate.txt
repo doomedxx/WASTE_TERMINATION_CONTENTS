@@ -1,0 +1,12 @@
+//decorate
+
+ACTOR DoomPal
+{
+	states
+	{
+	Spawn:
+		DPAL A -1
+		loop
+	}
+}
+

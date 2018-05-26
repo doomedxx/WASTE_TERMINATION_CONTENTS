@@ -8,7 +8,7 @@ UDVSMALL
 	Template DSSCR%03d
 }
 
-DIGINUMBER1
+DIGINUMBER
    {
        0 DIGNUM0S
        1 DIGNUM1S
@@ -63,6 +63,20 @@ DIGIFONT_LARGE1
 	7 DIGLNUM7
 	8 DIGLNUM8
 	9 DIGLNUM9
+}  
+
+DIGIFONT_SMALL
+{
+	0 AMMO0
+	1 AMMO1
+	2 AMMO2
+	3 AMMO3
+	4 AMMO4
+	5 AMMO5
+	6 AMMO6
+	7 AMMO7
+	8 AMMO8
+	9 AMMO9
 }  
 
 /////////////////////////////////////////////////

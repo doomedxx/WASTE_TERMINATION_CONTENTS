@@ -1,0 +1,5 @@
+#~/bin/sh
+chmod +x bin/* util/*
+cd ./progs/palettedump/
+export PATH=../../bin/:../../util/:$PATH
+wxlua ./script/palettedump.lua

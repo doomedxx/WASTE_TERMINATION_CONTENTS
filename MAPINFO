@@ -15,7 +15,7 @@ Skill easy
 {
    AmmoFactor = 1
    DamageFactor = 0.75
-   MonsterHealth = 0.75
+   MonsterHealth = 0.9
    Aggressiveness = 1
    SpawnFilter = Normal
    Textcolor = white
@@ -27,7 +27,7 @@ Skill normal
 {
    AmmoFactor = 1
    DamageFactor = 0.90
-   MonsterHealth = 0.90
+   MonsterHealth = 1.0
    Aggressiveness = 1
    SpawnFilter = Hard
    Textcolor = white
@@ -40,7 +40,7 @@ Skill Hard
    AmmoFactor = 1
    DamageFactor = 1.7
    Aggressiveness = 1
-   MonsterHealth = 1.8
+   MonsterHealth = 1.2
    SpawnFilter = Nightmare
    Textcolor = white
    DisableCheats

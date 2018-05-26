@@ -1,0 +1,101 @@
+
+--[[
+one of wxFont's static methods allows us to create a font with "flags" for (un)setting antialiasing, etc.
+
+from http://www.wxwidgets.org/manuals/2.8/wx_wxfont.html#wxfontctor
+
+static wxFont * New(int pointSize, wxFontFamily family, int flags = wxFONTFLAG_DEFAULT, const wxString& faceName = "", wxFontEncoding encoding = wxFONTENCODING_DEFAULT)
+
+enum
+{
+    // no special flags: font with default weight/slant/anti-aliasing
+    wxFONTFLAG_DEFAULT          = 0,
+
+    // slant flags (default: no slant)
+    wxFONTFLAG_ITALIC           = 1 << 0, --1
+    wxFONTFLAG_SLANT            = 1 << 1, --2
+
+    // weight flags (default: medium)
+    wxFONTFLAG_LIGHT            = 1 << 2, --4
+    wxFONTFLAG_BOLD             = 1 << 3, --8
+
+    // anti-aliasing flag: force on or off (default: the current system default)
+    wxFONTFLAG_ANTIALIASED      = 1 << 4, --16
+    wxFONTFLAG_NOT_ANTIALIASED  = 1 << 5, --32
+
+    // underlined/strikethrough flags (default: no lines)
+    wxFONTFLAG_UNDERLINED       = 1 << 6, --64
+    wxFONTFLAG_STRIKETHROUGH    = 1 << 7, --128
+};
+
+--]]
+	
+function setFontFlags(flags)
+	-- create a new font with flags. copy our current fonts attributes.
+
+	local tempFont = wx.wxFont(font)
+	copyFontAttributes(font, tempFont)
+	font = wx.wxFont.New(tempFont:GetPointSize(), tempFont:GetFamily(), flags, tempFont:GetFaceName())
+	copyFontAttributes(tempFont, font)
+	tempFont = nil
+end
+
+function copyFontAttributes(fromFont, toFont)
+	toFont:SetPointSize(fromFont:GetPointSize())
+	toFont:SetFamily(fromFont:GetFamily())
+	toFont:SetFaceName(fromFont:GetFaceName())
+	toFont:SetStyle(fromFont:GetStyle())
+	toFont:SetWeight(fromFont:GetWeight())
+end
+
+
+
+
+
+--[[
+	-- handle save button
+    frame:Connect(xmlResource.GetXRCID("SaveButton"), wx.wxEVT_COMMAND_BUTTON_CLICKED,
+            function (event)
+                wx.wxMessageBox('Doom Font Generator version zero.')
+            end )
+--]]
+
+
+	-- connect anti alias button
+    frame:Connect(xmlResource.GetXRCID("AntialiasToggleButton"), wx.wxEVT_COMMAND_TOGGLEBUTTON_CLICKED,
+            function (event)    
+				local f =  wx.wxFONTFLAG_NOT_ANTIALIASED
+				if event:IsChecked() then f =  wx.wxFONTFLAG_ANTIALIASED end
+				print(f)
+			 	setFontFlags(f)
+                Redraw()
+            end )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	,
+	HandleOutputPicker = function (event)
+		local p =  LumpHelper.OutputFilePicker:GetPath()
+		if LumpHelper.Output then os.remove(LumpHelper.Output) end
+		if os.rename(p,p) then
+			LumpHelper.Output = nil
+		else
+			LumpHelper.Output = p
+			os.execute("echo placeholder > "..LumpHelper.Output)
+		end
+		if event then event:Skip() end	-- pass the event along
+	end
+	,
+
+

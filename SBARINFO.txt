@@ -12,10 +12,16 @@ StatusBar Fullscreen, FullscreenOffsets
 
 {
 // HEALTH
-DrawImage "HHEALTH", -650+center, -180, center;
-DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -642+center, -207;
-DrawImage "HARMOR", -350+center, -180, center;
-DrawNumber 3, digifont_large1, LIGHTBLUE, Armor, Alignment(right), whennotzero, -342+center, -207;
+	DrawImage "HHEALTH", -650+center, -180, center;
+	DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -642+center, -207;
+	DrawImage "HARMOR", -350+center, -180, center;
+	DrawNumber 3, digifont_large1, LIGHTBLUE, Armor, Alignment(right), whennotzero, -342+center, -207;
+
+IfHealth 100
+{
+	DrawImage "SHEALTH", -650+center, -180, center;
+	DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -642+center, -207;
+}
 
 alpha 0.3
 DrawImage "HUD0", 0, 0;
@@ -40,6 +46,18 @@ StatusBar Normal, FullscreenOffsets
 DrawImage "HHEALTH", -650+center, -110, center;
 DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -645+center, -133;
 
+IfHealth 101
+{
+	DrawImage "SHEALTH", -650+center, -110, center;
+	DrawNumber 3, digifont_large1, WHITE, Health, Alignment(right), whennotzero, -645+center, -133;
+}
+
+IfHealth not 36%
+{
+	DrawImage "PHEALTH", -650+center, -110, center;
+	DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -645+center, -133;
+}
+
 // ARMOR
 DrawImage "HARMOR", -350+center, -110, center;
 DrawNumber 3, digifont_large1, LIGHTBLUE, Armor, Alignment(right), -345+center, -133;
@@ -51,12 +69,9 @@ DrawNumber 3, digifont_large1, LIGHTBLUE, HandGrenadeAmmo, Alignment(right), whe
 // AMMO
 DrawImage "HAMMO", 	642+center, -110, center;
 DrawNumber 3, digifont_large1, LIGHTBLUE, ammo2, Alignment(right), 662+center, -137;
-DrawNumber 3, DIGINUMBER1, LIGHTBLUE, ammo1, Alignment(right), 572+center, -140;
-
-IsSelected Rifle 
-	{
-		DRAWSTRING UDVSMALL, LIGHTBLUE, weapontag, 662+center, -150;
-	}
+DrawNumber 3, DIGIFONT_SMALL, LIGHTBLUE, ammo1, Alignment(right), 592+center, -140;
+DRAWSTRING BIGFONT, LIGHTBLUE, logtext, 662+center, -150;
+DRAWSTRING UDVSMALL, LIGHTBLUE, weapontag, 662+center, -150;
 
 
 }

@@ -1,0 +1,12 @@
+Edit bigfont.charmap and confont.charmap to use 
+these as your custom font character sets.
+
+Copy the contents of the .sample files over if you 
+don't want to start from scratch.
+
+DO NOT DELETE bigfont.charmap or confont.charmap, 
+as this will cause annoying error messages. If you 
+don't want to use custom character sets, leave the 
+files blank and default character sets will be used.
+
+-- Spidey

@@ -1,0 +1,235 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="generator" content=
+  "HTML Tidy for Linux/x86 (vers 1 September 2005), see www.w3.org" />
+  <meta content="text/html; charset=us-ascii" http-equiv=
+  "content-type" />
+
+  <title>Spidey's ZDoom Font Generator</title>
+<style type="text/css">
+/*<![CDATA[*/
+
+body {margin:0;pagging:0;background-color: black; color: silver; font-family:sans-serif;font-size:12pt;}
+h1, h2, h4{font-family:monospace;}
+h1{margin:0;padding:8px;border-bottom:1px solid #c00;color:#c00;background-image:url('./images/bg2.png');background-color: black;background-repeat:no-repeat;}
+h2, h5{color:white;}
+h3{font-style:italic;font-size:12pt;}
+.main{margin:1em;}
+img.sshot{position:absolute; z-index:10}
+#padder{width:160px; height:80px; float:left;}
+a {color:red; text-decoration:none;}
+a img {border:none;}
+a img.sshot {width: 150px; height: 79px; cursor:default;}
+a:hover img.sshot {width: 873px; height: 463px;}
+a:active img.sshot {width: 150px; height: 79px;}
+li{padding-bottom:.5em;}
+.rtbox {
+float:right;clear:right;border:1px solid #700;width:250px;margin:8px 1em;
+}
+.rtbox h4{color:#b00;background-color:#300;background-image:url('./images/bg1.png');background-repeat:no-repeat;background-position:bottom right;
+font-size:16pt;font-weight:bold;margin:0;padding:2px 8px;
+}
+.rtbox h5, .rtbox a, .rtbox p, .rtbox ul{margin:0;padding:2px 0px;}
+.rtbox li{margin-left:16px; padding-left:8px;}
+.rtbox a{display:block;}
+.rtbox .content{font-size:smaller;padding:4px 8px;}
+.footer{clear:both;margin:0;margin-top:64px;padding:8px;border-top:8px dotted #600;
+font-size:smaller;
+color:white;
+font-weight:bold;
+}
+.footer img{vertical-align:middle;}
+.footer .hosted {float:right;}
+/*]]>*/
+</style>
+</head>
+
+<body>
+  <h1>Spidey's ZDoom Font Generator</h1>
+
+  <div class="main">
+    <a href="#"><img class="sshot" alt="screen shot" src=
+    "./images/screenshot.png" /></a><br />
+
+    <div id="padder"></div><small>&lt;- Point at the thumbnail to
+    see a screenshot.</small>
+  </div>
+
+  <div class="rtbox">
+    <h4 class="title">News</h4>
+
+    <div class="content">
+      <h5>Version 0.2.7 released</h5>
+
+      <ul>
+        <li>Major bug fixes</li>
+      </ul>
+
+      <h5>Version 0.2.6 released</h5>
+
+      <ul>
+        <li>Conversion tools</li>
+        <li>Documentation</li>
+        <li>Bug fixes</li>
+      </ul>
+      
+
+    </div>
+  </div>
+
+  <div class="rtbox">
+    <h4 class="title">Downloads</h4>
+
+    <div class="content">
+      <h5>Latest Version:</h5><a href=
+      "http://sourceforge.net/project/downloading.php?group_id=207739&amp;filename=doomfontgen-0.2.7.zip">Doomfontgen
+      0.2.7</a>
+
+     <!-- <h5>other downloads:</h5><a href=
+      "http://zdoom.org/files/utils/imagetool.zip">imagetool (from
+      zdoom.org)</a> -->
+    </div>
+  </div>
+
+  <div class="rtbox">
+    <h4 class="title">Documentation</h4>
+
+    <div class="content">
+      <h5>View the manual online:</h5>
+      <a href="./manual/index.html">Doomfontgen Manual</a>
+    </div>
+  </div>
+
+  <div class="rtbox">
+    <h4 class="title">Links</h4>
+    <div class="content">
+
+      <h5>Compatible Source Ports:</h5>
+	<a href="http://www.google.com/search?btnI=I&amp;q=ZDoom">ZDoom</a>
+	<a href="http://www.google.com/search?btnI=I&amp;q=GZDoom">GZDoom</a>
+	<a href="http://www.google.com/search?btnI=I&amp;q=Skulltag">Skulltag</a>
+	<a href="http://www.google.com/search?btnI=I&amp;q=Vavoom+source+port">Vavoom</a>
+
+      <h5>ZDoom Wiki Topics:</h5>
+	<a href="http://zdoom.org/wiki/Custom_Hud">Custom Hud</a>
+	<a href="http://zdoom.org/wiki/HudMessage">HudMessage</a>
+	<a href="http://zdoom.org/wiki/Print">Print</a>
+	<a href="http://zdoom.org/wiki/SendToCommunicator">SendToCommunicator</a>
+	<a href="http://zdoom.org/wiki/SetFont">SetFont</a>
+	<a href="http://zdoom.org/wiki/SetHudSize">SetHudSize</a>
+	<a href="http://zdoom.org/wiki/FONTDEFS">FONTDEFS</a>
+	<a href="http://zdoom.org/wiki/SBARINFO">SBARINFO</a>
+	<a href="http://zdoom.org/wiki/TEXTCOLO">TEXTCOLO</a>
+
+    </div>
+  </div>
+
+  <div class="main">
+    <h2>...so, what is it?</h2>
+
+    <p>"Spidey's ZDoom Font Generator," or "doomfontgen," generates
+    bitmaps from system fonts which can be converted for use in
+    Doom engines supporting zdoom-style "font lumps." This can be
+    done by using the utility "imagetool," which can be found at
+    <a href="http://zdoom.org/">zdoom.org</a>. <span class=
+    "c1">(note: imagetool is now integrated and distributed with
+    doomfontgen!)</span></p>
+
+    <p>This tool can create images suitable for "console fonts"
+    (FON1) or "big fonts" (FON2). Images can be saved as high-color
+    PNG (for editing) or paletted PCX (for direct import into
+    imagetool). Images can also be saved directly as font lumps. 
+    Doomfontgen can also create "embedded" / STCFN*
+    font images (several images , each representing a single
+    character).</p>
+
+
+    <h2>Supported Doom Engine Source Ports</h2>
+
+	<p>This tool is compatible with the ZDoom, GZDoom, Skulltag and Vavoom source ports. If you know of other compatible ports, please let me know. </p>
+	<p>Embedded fonts are compatible with any port, including the original "vanilla" DOS versions of Doom.</p>
+
+    <h2>Supported Font Types</h2>
+
+    <h3>Console fonts (FON1):</h3>
+
+    <ul>
+      <li>Contain 256 characters of identical size arranged in a
+      16x16 grid.</li>
+
+      <li>Contain a palette with index 0 representing transparency
+      and indices 1 to 255 gradiating from dark to light.</li>
+
+      <li>Imagetool ignores the palette's data and uses only the
+      indices.</li>
+    </ul>
+
+    <h3>"Big fonts" (FON2):</h3>
+
+    <ul>
+      <li>Have each character surrounded by a box made up of
+      palette entry 255.</li>
+
+      <li>Contain a palette with index 0 representing
+      transparency.</li>
+    </ul>
+
+    <h3>"Embedded fonts" (STCFN*):</h3>
+
+    <ul>
+      <li>Compatible with any source port.</li>
+      <li>Each character is represented by a seperate image.</li>
+      <li>These are not processed by imagetool. Use png transparency in a pk3 or let your wad editor set the transparency for you.</li>
+    </ul>
+
+    <div class="footer">
+      <div class="hosted">
+        Hosted on <a href="http://sourceforge.net"><img src=
+        "http://sflogo.sf.net/sflogo.php?group_id=207739&amp;type=3"
+        alt="SourceForge.net" border="0" height="37" width=
+        "125" /></a>
+      </div><a href=
+      "http://www.google.com/search?btnI=I&amp;q=zdoom"><img src=
+      "./images/zdoom.png" alt="ZDoom" /></a> <a href=
+      "http://www.google.com/search?btnI=I&amp;q=wxWidgets"><img src="./images/wx.png"
+      alt="wxWidgets" /></a> <a href=
+      "http://www.google.com/search?btnI=I&amp;q=Lua"><img src=
+      "./images/lua.png" alt="Lua" /></a>
+    </div>
+  </div>
+</body>
+</html>
+
+
+<!--
+<div class="rtbox">
+<h4 class="title">Old News</h4>
+<div class="content">
+      <h5>Version 0.2.5 released</h5>
+
+      <ul>
+        <li>Imagetool integration!</li>
+
+        <li>Brightness control</li>
+      </ul>
+      <h5>Version 0.2.4 released</h5>
+
+      <ul>
+        <li>User- configurable character templates</li>
+
+        <li>Load / save character sets</li>
+
+        <li>Added "zoom" feature</li>
+      </ul>
+<h5>Version 0.2.3 released</h5>
+<ul>
+<li>STCFN* font support - added option to save font as a folder full of images</li>
+<li>Fixed palette when exporting indexed console font (thanks, ImageMagick ;)</li>
+<li>Console font characters are now centered when using a variable width font</li>
+</ul>
+</div>
+</div>
+-->

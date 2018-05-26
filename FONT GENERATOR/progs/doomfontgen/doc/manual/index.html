@@ -1,0 +1,174 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 7 December 2008), see www.w3.org" />
+
+  <title>Manual - Spidey's ZDoom Font Generator</title>
+  <meta content="text/html; charset=us-ascii" http-equiv="content-type" />
+  <meta content="Manual for Spidey's ZDoom Font Generator" name="description" />
+</head>
+
+<body>
+  <h1>Spidey's ZDoom Font Generator</h1>
+
+  <h2>Contents</h2>
+
+  <ul>
+    <li><a href="#Introduction">Introduction</a></li>
+
+    <li><a href="#Font_types">Font types</a></li>
+
+    <li style="list-style: none; display: inline">
+      <ul>
+        <li><a href="#Console_fonts">Console fonts</a></li>
+
+        <li><a href="#Big_fonts">Big fonts</a></li>
+
+        <li><a href="#Embedded_fonts">Embedded fonts</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#Output_Formats">Output formats</a></li>
+
+    <li style="list-style: none; display: inline">
+      <ul>
+        <li><a href="#Full_color_image">Full color image (PNG)</a></li>
+      </ul>
+
+      <ul>
+        <li><a href="#Paletted_image">Paletted image (PCX)</a></li>
+
+        <li><a href="#Font_lump">Font lump (LMP)</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#Character_sets">Character sets</a></li>
+
+    <li style="list-style: none; display: inline">
+      <ul>
+        <li><a href="#Using_custom_character_sets">Using custom character sets</a></li>
+
+        <li><a href="#Loading_and_saving_character_sets">Loading and saving character sets</a></li>
+      </ul>
+    </li>
+
+    <li><a href="#Conversion_tools">Conversion tools</a></li>
+
+    <li style="list-style: none; display: inline">
+      <ul>
+        <li><a href="#Convert_image_to_lump">Convert image to font lump</a></li>
+      </ul>
+    </li>
+  </ul>
+
+  <p><a name="Introduction" id="Introduction"></a></p>
+
+  <h2>Introduction</h2>
+
+  <p align="justify">Spidey's ZDoom Font Generator (doomfontgen) generates files from system fonts which can be used in Doom source ports supporting zdoom-style fonts. Simply choose a font, adjust the position and size of the characters as necessary, and save. Console fonts, big fonts, and embedded (STCFN) fonts are all supported. Doomfontgen can save your font as an image, so that you can edit it in your favorite editor. Then, Doomfontgen can convert it to a font lump suitable for import into your wad. Doomfontgen can also save font lumps directly.</p>
+
+  <p>Images are converted to font lumps using a modified version of Randy Heit's <i>imagetool</i>, a small utility which is distributed with doomfontgen. Randy's imagetool uses palette index 255 for the bigfont glyph delimiter color; the modified version included with this program uses palette index 1 instead.</p>
+
+  <p><a name="Font_types" id="Font_types"></a></p>
+
+  <h2>Font types</h2>
+
+  <p align="justify">Three distinct types of fonts can be generated with this tool: console fonts, big fonts, and embedded fonts. Console fonts are generally used in the console and in some options screens. Big fonts are generally not used by default, but they can be used in mods with a bit of scripting. Embedded fonts are generally used on options screens, and for obituaries and other hud messages.</p>
+
+  <p><a name="Console_fonts" id="Console_fonts"></a></p>
+
+  <h3>Console fonts</h3>
+
+  <p align="justify">The source image for a console font must have 256 characters of identical size arranged in a 16x16 grid. Palette index 0 represents transparency, and indices 1 to 255 gradiate from dark to light. The source image's palette is ignored when the font is created; only the palette indices are used.</p>
+
+  <p align="justify">To create a console font using doomfontgen, select "Console font" in the dropdown box labeled "Mode." Select a font and make any other adjustments desired. Save your font as a "lmp" file.</p>
+
+  <p align="justify">To replace the standard console font with a custom font, import your font lump into your wad and name it "CONFONT."</p>
+
+  <p><a name="Big_fonts" id="Big_fonts"></a></p>
+
+  <h3>Big fonts</h3>
+
+  <p align="justify">The source image for big fonts should have each character surrounded by a box made up of palette entry 1. Palette index 0 represents transparency; the rest of the colors in the source image's palette can be used to colorize the font. Big fonts may also be colorized by the engine at runtime. Currently doomfontgen only creates grayscale big fonts. If you would like to color a big font, you should save it as an image and colorize it in your favorite image editing software before converting it to a lump.</p>
+
+  <p align="justify">To create a big font using doomfontgen, select "Big font" in the dropdown box labeled "Mode." Select a font and make any other adjustments desired. Save your font as a "lmp" file.</p>
+
+  <p align="justify">Since big fonts do not exist in vanilla Doom, it does not make sense to replace the "default" big font with a custom one. Big fonts can generally only be accessed though scripting.</p>
+
+  <p>Photoshop users should note that Photoshop displays palettes for indexed images in reverse, with index 255 first and index 1 last.</p>
+
+  <p><a name="Embedded_fonts" id="Embedded_fonts"></a></p>
+
+  <h3>Embedded fonts</h3>
+
+  <p align="justify">Embedded (STCFN) fonts are composed of several images, each representing a single character. These images are not processed by imagetool. Use png transparency in for a pk3 or let your wad editor set the transparency for you for a wad. All of the colors in the image's palette can be used to colorize the font. However, the engine is likely to colorize the font at runtime, using only the brightness values from the original image.</p>
+
+  <p align="justify">To create an embedded font using doomfontgen, select either "Console font" or "Big font." Select a font and make any other adjustments desired. Save your font as a "folder full of images." When saving embedded fonts as PCX, a cyan background will be used rather than the normal black background. XWE (and possible other wad editors?) interpret this cyan color as being transparent, regardless of index, when the images are imported.</p>
+
+  <p align="justify">The default names of the image files will be suitable for replacing the default embedded font.</p>
+
+  <p><a name="Output_Formats" id="Output_Formats"></a></p>
+
+  <h2>Output Formats</h2>
+
+  <p align="justify">Fonts can be saved either as images or lump files. Doomfontgen always saves PNG images in full color, while PCX images are always saved as paletted. Lump files are not image files at all; rather they are data files which can be imported into a wad using a tool like XWE. In addition to these formats, several extra image formats are also supported. These extra image formats can only be accessed when saving using the "determine file type from extension" option, and should generally be avoided.</p>
+
+  <p><a name="Full_color_image" id="Full_color_image"></a></p>
+
+  <h3>Full color image (PNG)</h3>
+
+  <p align="justify">Doomfontgen always saves PNG images in full color. You can edit the image with an image editor (I recommend The GIMP for image editing) before converting it to a lump file for import into your wad.</p>
+
+  <p><a name="Paletted_image" id="Paletted_image"></a></p>
+
+  <h3>Paletted image (PCX)</h3>
+
+  <p align="justify">Doomfontgen always saves PCX images as paletted. The palette generated by doomfontgen should be suitable for conversion to font lump without any additional preparation. You can edit the image with an image editor before converting it to a lump file. Editing the image may alter the palette, in which case the palette may need to be prepared for imagetool before converting the image to a lump file.</p>
+
+  <p><a name="Font_lump" id="Font_lump"></a></p>
+
+  <h3>Font lump (LMP)</h3>
+
+  <p align="justify">Lump files are data files which can be imported into a wad using a tool like XWE. Doomfontgen allows you to save your font directly as a lump file. This file cannot be edited without first converting it into an image. In general, you should only save a font as a lump file if you will not need to make any changes to it.</p>
+
+  <p><a name="Character_sets" id="Character_sets"></a></p>
+
+  <h2>Character sets</h2>
+
+  <p align="justify">The characers that will be included in your font are shown in the lower right corner of doomfontgen's main window. There are currently a few limitations on what characters you can use and how you can use them. For example, as noted earlier a console font must have 256 characters of identical size arranged in a 16x16 grid. Two default character sets are provided; one for console fonts, and one for big fonts.</p>
+
+  <p><a name="Using_custom_character_sets" id="Using_custom_character_sets"></a></p>
+
+  <h3>Using custom character sets</h3>
+
+  <p align="justify">You may want to use your own custom character sets instead of the default sets provided. To accomplish this, use your file manager to browse to the directory named "config" inside the directory in which you unpacked doomfontgen. Open "bigfont.charmap" or "confont.charmap" using a text editor. If you haven't set up any custom character sets yet, these files will be blank. If you add anything to one of these files, doomfontgen will use it as your custom font character set for the corresponding font mode. You can copy the contents of the .sample files (found in the same directory) into the .charmap files if you don't want to start from scratch.</p>
+
+  <p align="justify">Do not delete bigfont.charmap or confont.charmap as this will cause annoying error messages. If you don't want to use custom character sets, leave the files blank and the default character sets will be used.</p>
+
+  <p><a name="Loading_and_saving_character_sets" id="Loading_and_saving_character_sets"></a></p>
+
+  <h3>Loading and saving character sets</h3>
+
+  <p align="justify">You can save and load character sets using the two small buttons that appear over the text area in the lower right corner of doomfontgen's main window. It is important to note that any changes you make by loading a character map in this way or by manually editing the text area will be reverted if the value of the "Mode" drop down is changed.</p>
+
+  <p><a name="Conversion_tools" id="Conversion_tools"></a></p>
+
+  <h2>Conversion tools</h2>
+
+  <p align="justify">A few image conversion tools are provided for your convenience. These tools can be accessed from doomfontgen's "Tools" menu.</p>
+
+  <p><a name="Convert_image_to_lump" id="Convert_image_to_lump"></a></p>
+
+  <h3>Convert image to lump</h3>
+
+  <p align="justify">You can convert an image to a font lump suitable for importing into a wad by selecting "Create lump from image" from the tools menu. This should be mostly self-explanitory. If you are converting a full color image or a paletted image which does not use a palette appropriate for imagetool, "Prepare image" should be set to "Fix palette." If your image already has an appropriate palette, you can set this option to "Leave palette alone."</p>
+
+  <p><a name="Convert_lump_to_image" id="Convert_lump_to_image"></a></p>
+
+  <h3>Convert lump to image</h3>
+
+  <p align="justify">Imagetool can convert graphical lumps into standard image formats. To use this functionality, select "Create image from lump" from the tools menu.</p>
+</body>
+</html>

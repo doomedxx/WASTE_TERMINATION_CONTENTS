@@ -1,0 +1,892 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<resource xmlns="http://www.wxwindows.org/wxxrc" version="2.3.0.1">
+	<object class="wxPanel" name="MainPanel">
+		<style>wxTAB_TRAVERSAL</style>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>1</option>
+				<flag>wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxBoxSizer">
+					<orient>wxHORIZONTAL</orient>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxEXPAND | wxALL</flag>
+						<border>5</border>
+						<object class="wxScrolledWindow" name="ScrollPanel">
+							<style>wxSUNKEN_BORDER</style>
+							<object class="wxBoxSizer">
+								<orient>wxHORIZONTAL</orient>
+								<object class="sizeritem">
+									<option>1</option>
+									<flag>wxEXPAND</flag>
+									<border>0</border>
+									<object class="wxPanel" name="CanvasPanel">
+										<style>wxTAB_TRAVERSAL</style>
+									</object>
+								</object>
+							</object>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALL|wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxPanel" name="ControlPanel">
+							<style>wxTAB_TRAVERSAL</style>
+							<object class="wxBoxSizer">
+								<orient>wxVERTICAL</orient>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxALIGN_CENTER|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+									<border>0</border>
+									<object class="wxStaticBitmap">
+										<size>160,64</size>
+										<bitmap>./logo.png</bitmap>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag></flag>
+									<border>5</border>
+									<object class="wxStaticText">
+										<font>
+											<size>10</size>
+											<family>default</family>
+											<style>normal</style>
+											<weight>bold</weight>
+											<underlined>0</underlined>
+											<face>Sans</face>
+										</font>
+										<label>Mode</label>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxEXPAND</flag>
+									<border>0</border>
+									<object class="wxChoice" name="ModeChoice">
+										<size>-1,32</size>
+										<selection>0</selection>
+										<content>
+											<item>Console Font</item>
+											<item>Big Font</item>
+										</content>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag></flag>
+									<border>5</border>
+									<object class="wxStaticText">
+										<font>
+											<size>10</size>
+											<family>default</family>
+											<style>normal</style>
+											<weight>bold</weight>
+											<underlined>0</underlined>
+											<face>Sans</face>
+										</font>
+										<label>Font</label>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxEXPAND</flag>
+									<border>0</border>
+									<object class="wxButton" name="FontButton">
+										<size>-1,32</size>
+										<label>Choose Font...</label>
+										<default>0</default>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<object class="wxBoxSizer">
+										<orient>wxHORIZONTAL</orient>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxALL</flag>
+											<border>2</border>
+											<object class="wxStaticBitmap" name="m_bitmap2">
+												<tooltip>Brightness</tooltip>
+												<bitmap>./toolbar/color-lum.png</bitmap>
+											</object>
+										</object>
+										<object class="sizeritem">
+											<option>1</option>
+											<flag></flag>
+											<border>5</border>
+											<object class="wxSlider" name="BrightSlider">
+												<style>wxSL_HORIZONTAL</style>
+												<tooltip>Brightness</tooltip>
+												<value>127</value>
+												<min>0</min>
+												<max>255</max>
+											</object>
+										</object>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag></flag>
+									<border>5</border>
+									<object class="wxStaticText">
+										<font>
+											<size>10</size>
+											<family>default</family>
+											<style>normal</style>
+											<weight>bold</weight>
+											<underlined>0</underlined>
+											<face>Sans</face>
+										</font>
+										<label>Position</label>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxEXPAND</flag>
+									<border>0</border>
+									<object class="wxBoxSizer">
+										<orient>wxHORIZONTAL</orient>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxALIGN_CENTER</flag>
+											<border>0</border>
+											<object class="wxStaticText">
+												<size>16,-1</size>
+												<label> X</label>
+											</object>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag></flag>
+											<border>0</border>
+											<object class="wxTextCtrl" name="PosXText">
+												<size>48,24</size>
+												<value>0</value>
+												<maxlength>0</maxlength>
+											</object>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxADJUST_MINSIZE</flag>
+											<border>0</border>
+											<object class="wxSpinButton" name="PosXSpin">
+												<size>16, 24</size>
+											</object>
+										</object>
+										<object class="spacer">
+											<option>1</option>
+											<flag>wxEXPAND</flag>
+											<border>5</border>
+											<size>0,0</size>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxALIGN_CENTER</flag>
+											<border>0</border>
+											<object class="wxStaticText">
+												<size>16,-1</size>
+												<label> Y</label>
+											</object>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag></flag>
+											<border>0</border>
+											<object class="wxTextCtrl" name="PosYText">
+												<size>48,24</size>
+												<value>0</value>
+												<maxlength>0</maxlength>
+											</object>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxADJUST_MINSIZE</flag>
+											<border>0</border>
+											<object class="wxSpinButton" name="PosYSpin">
+												<size>16, 24</size>
+											</object>
+										</object>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag></flag>
+									<border>5</border>
+									<object class="wxStaticText">
+										<font>
+											<size>10</size>
+											<family>default</family>
+											<style>normal</style>
+											<weight>bold</weight>
+											<underlined>0</underlined>
+											<face>Sans</face>
+										</font>
+										<label>Cell Size</label>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxEXPAND</flag>
+									<border>0</border>
+									<object class="wxBoxSizer">
+										<orient>wxHORIZONTAL</orient>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxALIGN_CENTER</flag>
+											<border>0</border>
+											<object class="wxStaticText">
+												<size>16,-1</size>
+												<label> X</label>
+											</object>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag></flag>
+											<border>0</border>
+											<object class="wxTextCtrl" name="CellWText">
+												<size>48,24</size>
+												<value>0</value>
+												<maxlength>0</maxlength>
+											</object>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxADJUST_MINSIZE</flag>
+											<border>0</border>
+											<object class="wxSpinButton" name="CellWSpin">
+												<size>16, 24</size>
+											</object>
+										</object>
+										<object class="spacer">
+											<option>1</option>
+											<flag>wxEXPAND</flag>
+											<border>5</border>
+											<size>0,0</size>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxALIGN_CENTER</flag>
+											<border>0</border>
+											<object class="wxStaticText">
+												<size>16,-1</size>
+												<label> Y</label>
+											</object>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag></flag>
+											<border>0</border>
+											<object class="wxTextCtrl" name="CellHText">
+												<size>48,24</size>
+												<value>0</value>
+												<maxlength>0</maxlength>
+											</object>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxADJUST_MINSIZE</flag>
+											<border>0</border>
+											<object class="wxSpinButton" name="CellHSpin">
+												<size>16, 24</size>
+											</object>
+										</object>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>0</option>
+									<flag>wxEXPAND</flag>
+									<border>5</border>
+									<object class="wxBoxSizer">
+										<orient>wxHORIZONTAL</orient>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag>wxTOP</flag>
+											<border>5</border>
+											<object class="wxStaticText">
+												<font>
+													<size>10</size>
+													<family>default</family>
+													<style>normal</style>
+													<weight>bold</weight>
+													<underlined>0</underlined>
+													<face>Sans</face>
+												</font>
+												<label>Characters</label>
+											</object>
+										</object>
+										<object class="spacer">
+											<option>1</option>
+											<flag></flag>
+											<border>5</border>
+											<size>0,0</size>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag></flag>
+											<border>5</border>
+											<object class="wxBitmapButton" name="LoadCharsButton">
+												<style>wxBU_AUTODRAW|wxNO_BORDER</style>
+												<tooltip>Load characters from file</tooltip>
+												<bitmap>toolbar/open-unlit.png</bitmap>
+												<selected>toolbar/open.png</selected>
+												<focus>toolbar/open.png</focus>
+												<hover>toolbar/open.png</hover>
+												<default>0</default>
+											</object>
+										</object>
+										<object class="sizeritem">
+											<option>0</option>
+											<flag></flag>
+											<border>5</border>
+											<object class="wxBitmapButton" name="SaveCharsButton">
+												<style>wxBU_AUTODRAW|wxNO_BORDER</style>
+												<tooltip>Save characters to file</tooltip>
+												<bitmap>toolbar/save-unlit.png</bitmap>
+												<selected>toolbar/save.png</selected>
+												<focus>toolbar/save.png</focus>
+												<hover>toolbar/save.png</hover>
+												<default>0</default>
+											</object>
+										</object>
+									</object>
+								</object>
+								<object class="sizeritem">
+									<option>1</option>
+									<flag>wxEXPAND</flag>
+									<border>0</border>
+									<object class="wxTextCtrl" name="CharsText">
+										<style>wxTE_DONTWRAP|wxTE_MULTILINE|wxTE_PROCESS_ENTER</style>
+										<size>160,-1</size>
+										<font>
+											<size>10</size>
+											<family>modern</family>
+											<style>normal</style>
+											<weight>normal</weight>
+											<underlined>0</underlined>
+										</font>
+										<value></value>
+										<maxlength>0</maxlength>
+									</object>
+								</object>
+							</object>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxBoxSizer">
+					<orient>wxHORIZONTAL</orient>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+						<border>5</border>
+						<object class="wxStaticText" name="m_staticText10">
+							<label>Zoom:</label>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+						<border>5</border>
+						<object class="wxSlider" name="ZoomSlider">
+							<style>wxSL_HORIZONTAL</style>
+							<size>64,-1</size>
+							<value>0</value>
+							<min>0</min>
+							<max>3</max>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+						<border>5</border>
+						<object class="wxStaticText" name="ZoomText">
+							<label>1x</label>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+	</object>
+	<object class="wxDialog" name="LumpDialog">
+		<style>wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER</style>
+		<title>Create lump from image</title>
+		<centered>1</centered>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>2</option>
+				<flag>wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxBoxSizer">
+					<orient>wxVERTICAL</orient>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxBOTTOM|wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxBoxSizer">
+							<orient>wxVERTICAL</orient>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxALL|wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxStaticBoxSizer">
+									<orient>wxVERTICAL</orient>
+									<label>Source image preview</label>
+									<object class="sizeritem">
+										<option>1</option>
+										<flag>wxEXPAND</flag>
+										<border>5</border>
+										<object class="wxScrolledWindow" name="ImagePreview">
+											<style>wxHSCROLL|wxVSCROLL</style>
+											<size>-1,200</size>
+										</object>
+									</object>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>0</option>
+								<flag>wxALL|wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxVERTICAL</orient>
+									<object class="spacer">
+										<option>1</option>
+										<flag>wxEXPAND</flag>
+										<border>5</border>
+										<size>0,0</size>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxEXPAND</flag>
+										<border>5</border>
+										<object class="wxBoxSizer">
+											<orient>wxHORIZONTAL</orient>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+												<border>5</border>
+												<object class="wxStaticText" name="m_staticText122">
+													<size>100,-1</size>
+													<label>Lump type</label>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>1</option>
+												<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+												<border>5</border>
+												<object class="wxChoice" name="FontChoice">
+													<selection>0</selection>
+													<content>
+														<item>Console font</item>
+														<item>Big font</item>
+														<item>Image</item>
+														<item>Crosshair</item>
+													</content>
+												</object>
+											</object>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxEXPAND</flag>
+										<border>5</border>
+										<object class="wxBoxSizer">
+											<orient>wxHORIZONTAL</orient>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+												<border>5</border>
+												<object class="wxStaticText" name="m_staticText1211">
+													<size>100,-1</size>
+													<label>Prepare image</label>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>1</option>
+												<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+												<border>5</border>
+												<object class="wxChoice" name="ConvertChoice">
+													<selection>0</selection>
+													<content>
+														<item>Fix palette</item>
+														<item>Leave palette alone</item>
+													</content>
+												</object>
+											</object>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxEXPAND</flag>
+										<border>5</border>
+										<object class="wxBoxSizer">
+											<orient>wxHORIZONTAL</orient>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+												<border>5</border>
+												<object class="wxStaticText" name="m_staticText12">
+													<size>100,-1</size>
+													<label>Source image</label>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>1</option>
+												<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+												<border>5</border>
+												<object class="wxFilePickerCtrl" name="SourceFilePicker">
+													<value></value>
+													<message>Select source file</message>
+													<wildcard>Image files (png, bmp, pcx, ilbm)|*.png;*.pcx;*.bmp;*.ilbm|All files|*.*</wildcard>
+													<style>wxFLP_FILE_MUST_EXIST|wxFLP_OPEN</style>
+													<hidden>1</hidden>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>1</option>
+												<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+												<border>5</border>
+												<object class="wxButton" name="SourceButton">
+													<label>Choose...</label>
+													<default>0</default>
+												</object>
+											</object>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxEXPAND</flag>
+										<border>5</border>
+										<object class="wxBoxSizer">
+											<orient>wxHORIZONTAL</orient>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+												<border>5</border>
+												<object class="wxStaticText" name="m_staticText121">
+													<size>100,-1</size>
+													<label>Output lump</label>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>1</option>
+												<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+												<border>5</border>
+												<object class="wxFilePickerCtrl" name="OutputFilePicker">
+													<value></value>
+													<message>Select output file</message>
+													<wildcard>Lump file (lmp)|*.lmp</wildcard>
+													<style>wxFLP_OVERWRITE_PROMPT|wxFLP_SAVE</style>
+													<hidden>1</hidden>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>1</option>
+												<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+												<border>5</border>
+												<object class="wxButton" name="OutputButton">
+													<label>Choose...</label>
+													<default>0</default>
+												</object>
+											</object>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxEXPAND</flag>
+										<border>5</border>
+										<object class="wxBoxSizer">
+											<orient>wxHORIZONTAL</orient>
+											<object class="spacer">
+												<option>1</option>
+												<flag>wxALL|wxEXPAND</flag>
+												<border>5</border>
+												<size>100,0</size>
+											</object>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALL</flag>
+												<border>5</border>
+												<object class="wxButton" name="CloseButton">
+													<label>Close Dialog</label>
+													<default>0</default>
+												</object>
+											</object>
+											<object class="sizeritem">
+												<option>0</option>
+												<flag>wxALL</flag>
+												<border>5</border>
+												<object class="wxButton" name="CreateButton">
+													<font>
+														<family>default</family>
+														<style>normal</style>
+														<weight>normal</weight>
+														<underlined>0</underlined>
+													</font>
+													<label>Create Lump</label>
+													<default>1</default>
+												</object>
+											</object>
+										</object>
+									</object>
+								</object>
+							</object>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+	</object>
+	<object class="wxDialog" name="ManDialog">
+		<style>wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER</style>
+		<title>Manual - Spidey&apos;s ZDoom Font Generator</title>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxBoxSizer">
+					<orient>wxHORIZONTAL</orient>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag></flag>
+						<border>5</border>
+						<object class="wxBitmapButton" name="BackButton">
+							<style>wxBU_AUTODRAW|wxNO_BORDER</style>
+							<bitmap>./toolbar/go-back.png</bitmap>
+							<default>0</default>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag></flag>
+						<border>5</border>
+						<object class="wxBitmapButton" name="ForwardButton">
+							<style>wxBU_AUTODRAW|wxNO_BORDER</style>
+							<bitmap>./toolbar/go-forward.png</bitmap>
+							<default>0</default>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag></flag>
+						<border>5</border>
+						<object class="wxBitmapButton" name="HomeButton">
+							<style>wxBU_AUTODRAW|wxNO_BORDER</style>
+							<bitmap>./toolbar/go-home.png</bitmap>
+							<default>0</default>
+						</object>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag></flag>
+						<border>5</border>
+						<object class="wxBitmapButton" name="TopButton">
+							<style>wxBU_AUTODRAW|wxNO_BORDER</style>
+							<bitmap>./toolbar/go-top.png</bitmap>
+							<default>0</default>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<option>1</option>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxHtmlWindow" name="ManHtml">
+					<style>wxHW_SCROLLBAR_AUTO|wxSUNKEN_BORDER</style>
+					<size>550,300</size>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxBoxSizer">
+					<orient>wxHORIZONTAL</orient>
+					<object class="spacer">
+						<option>1</option>
+						<flag>wxEXPAND</flag>
+						<border>5</border>
+						<size>0,0</size>
+					</object>
+					<object class="sizeritem">
+						<option>0</option>
+						<flag>wxALL</flag>
+						<border>5</border>
+						<object class="wxButton" name="CloseButton">
+							<label>Close</label>
+							<default>1</default>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+	</object>
+	<object class="wxDialog" name="ImageDialog">
+		<style>wxDEFAULT_DIALOG_STYLE|wxRESIZE_BORDER</style>
+		<title>Create image from lump</title>
+		<object class="wxBoxSizer">
+			<orient>wxVERTICAL</orient>
+			<object class="sizeritem">
+				<option>1</option>
+				<flag>wxALL|wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxStaticBoxSizer">
+					<orient>wxVERTICAL</orient>
+					<label>Source lump preview</label>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxScrolledWindow" name="ImagePreview">
+							<style>wxHSCROLL|wxVSCROLL</style>
+							<size>-1,200</size>
+						</object>
+					</object>
+				</object>
+			</object>
+			<object class="sizeritem">
+				<option>0</option>
+				<flag>wxEXPAND</flag>
+				<border>5</border>
+				<object class="wxBoxSizer">
+					<orient>wxHORIZONTAL</orient>
+					<object class="sizeritem">
+						<option>1</option>
+						<flag>wxEXPAND</flag>
+						<border>5</border>
+						<object class="wxBoxSizer">
+							<orient>wxVERTICAL</orient>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxHORIZONTAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText12">
+											<size>100,-1</size>
+											<label>Source lump</label>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>1</option>
+										<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+										<border>5</border>
+										<object class="wxFilePickerCtrl" name="SourceFilePicker">
+											<value></value>
+											<message>Select source file</message>
+											<wildcard>Image files (png, bmp, pcx, ilbm)|*.png;*.pcx;*.bmp;*.ilbm|All files|*.*</wildcard>
+											<style>wxFLP_FILE_MUST_EXIST|wxFLP_OPEN</style>
+											<hidden>1</hidden>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>1</option>
+										<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+										<border>5</border>
+										<object class="wxButton" name="SourceButton">
+											<label>Choose...</label>
+											<default>0</default>
+										</object>
+									</object>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxHORIZONTAL</orient>
+									<object class="sizeritem">
+										<option>0</option>
+										<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+										<border>5</border>
+										<object class="wxStaticText" name="m_staticText121">
+											<size>100,-1</size>
+											<label>Output image</label>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>1</option>
+										<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+										<border>5</border>
+										<object class="wxFilePickerCtrl" name="OutputFilePicker">
+											<value></value>
+											<message>Select output file</message>
+											<wildcard>Lump file (lmp)|*.lmp</wildcard>
+											<style>wxFLP_OVERWRITE_PROMPT|wxFLP_SAVE</style>
+											<hidden>1</hidden>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>1</option>
+										<flag>wxALIGN_CENTER_VERTICAL|wxALL</flag>
+										<border>5</border>
+										<object class="wxButton" name="OutputButton">
+											<label>Choose...</label>
+											<default>0</default>
+										</object>
+									</object>
+								</object>
+							</object>
+							<object class="sizeritem">
+								<option>1</option>
+								<flag>wxEXPAND</flag>
+								<border>5</border>
+								<object class="wxBoxSizer">
+									<orient>wxHORIZONTAL</orient>
+									<object class="spacer">
+										<option>0</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<size>100,0</size>
+									</object>
+									<object class="sizeritem">
+										<option>1</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxButton" name="CloseButton">
+											<label>Close Dialog</label>
+											<default>0</default>
+										</object>
+									</object>
+									<object class="sizeritem">
+										<option>1</option>
+										<flag>wxALL</flag>
+										<border>5</border>
+										<object class="wxButton" name="CreateButton">
+											<font>
+												<family>default</family>
+												<style>normal</style>
+												<weight>normal</weight>
+												<underlined>0</underlined>
+											</font>
+											<label>Create Image</label>
+											<default>1</default>
+										</object>
+									</object>
+								</object>
+							</object>
+						</object>
+					</object>
+				</object>
+			</object>
+		</object>
+	</object>
+</resource>
