@@ -52,7 +52,7 @@ IfHealth 101
 	DrawNumber 3, digifont_large1, WHITE, Health, Alignment(right), whennotzero, -645+center, -133;
 }
 
-IfHealth not 36%
+IfHealth not 34%
 {
 	DrawImage "PHEALTH", -650+center, -110, center;
 	DrawNumber 3, digifont_large1, LIGHTBLUE, Health, Alignment(right), whennotzero, -645+center, -133;

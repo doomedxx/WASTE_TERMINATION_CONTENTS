@@ -148,7 +148,8 @@ dest/hcrate3		hcrate3
 dest/pipebur1		pipebur
 dest/crash1			crash1
 dest/metal1			metal
-
+script/beep			beep
+script/cafsnd		cafsnd
 
 
 door/door1		DSDOROPN

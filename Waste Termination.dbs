@@ -66,9 +66,9 @@ maps
 		overridebrightness = false;
 		uselongtexturenames = false;
 		useresourcesinreadonlymode = false;
-		viewpositionx = -1078.856f;
-		viewpositiony = 1843.979f;
-		viewscale = 0.8003113f;
+		viewpositionx = 906.0265f;
+		viewpositiony = 2324.406f;
+		viewscale = 1.040392f;
 		
 		grid
 		{
@@ -78,7 +78,7 @@ maps
 			backoffsety = 0;
 			backscalex = 100;
 			backscaley = 100;
-			gridsize = 64f;
+			gridsize = 32f;
 		}
 		
 		fieldtypes
@@ -161,8 +161,8 @@ maps
 				resource;
 				tabtype = 0;
 				scripttype = 1;
-				caretposition = 15290;
-				firstvisibleline = 508;
+				caretposition = 26476;
+				firstvisibleline = 924;
 				activetab = true;
 			}
 		}
