@@ -44,7 +44,7 @@ maps
 			resource3
 			{
 				type = 1;
-				location = "C:\\Users\\wesle\\Documents\\GitHub\\reversi222\\WASTE_TERMINATION_CONTENTS";
+				location = "C:\\Games\\Doom2\\Custom\\CONTENT\\WASTE_TERMINATION_CONTENTS";
 				option1 = 0;
 				option2 = 0;
 				notfortesting = 0;
@@ -66,9 +66,9 @@ maps
 		overridebrightness = false;
 		uselongtexturenames = false;
 		useresourcesinreadonlymode = false;
-		viewpositionx = -4956.283f;
-		viewpositiony = 1030.456f;
-		viewscale = 0.4735571f;
+		viewpositionx = -3203.063f;
+		viewpositiony = 1468.82f;
+		viewscale = 0.4735542f;
 		
 		grid
 		{
@@ -117,12 +117,12 @@ maps
 				floorglowcolor = 0;
 				xpanningceiling = 1;
 				ypanningceiling = 1;
-				rotationceiling = 1;
+				rotationceiling = 17;
 				xscaleceiling = 1;
 				yscaleceiling = 1;
 				xpanningfloor = 1;
 				ypanningfloor = 1;
-				rotationfloor = 1;
+				rotationfloor = 17;
 				xscalefloor = 1;
 				yscalefloor = 1;
 				floorterrain = 2;
